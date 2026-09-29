@@ -45,6 +45,17 @@
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addDisclaimer); else addDisclaimer();
   new MutationObserver(addDisclaimer).observe(document.documentElement, { childList:true, subtree:true });
+  const addDiscoDropdown = () => {
+    const nav = document.querySelector('header nav');
+    if (!nav || nav.querySelector('.bb-disco-dropdown')) return;
+    const wrap = document.createElement('div'); wrap.className='bb-disco-dropdown'; wrap.style.cssText='position:relative;display:inline-block';
+    const button = document.createElement('button'); button.type='button'; button.textContent='DISCOs ▾'; button.style.cssText='border:0;background:transparent;border-radius:999px;padding:8px 14px;color:#475569;font:600 14px inherit;cursor:pointer';
+    const menu = document.createElement('div'); menu.style.cssText='display:none;position:absolute;top:100%;right:0;z-index:100;background:#fff;border:1px solid #dbe7e1;border-radius:16px;padding:8px;min-width:190px;box-shadow:0 18px 40px #064e3b22;grid-template-columns:1fr 1fr;gap:2px';
+    Object.entries({LESCO:'lesco',IESCO:'iesco',GEPCO:'gepco',FESCO:'fesco',MEPCO:'mepco',PESCO:'pesco',HESCO:'hesco',SEPCO:'sepco',QESCO:'qesco',TESCO:'tesco',HAZECO:'hazeco','K-Electric':'k-electric'}).forEach(([name,slug])=>{const a=document.createElement('a');a.textContent=name;a.href='/disco/'+slug+'/';a.style.cssText='padding:9px 10px;border-radius:9px;color:#475569;text-decoration:none;font:600 12px system-ui,sans-serif';a.onmouseenter=()=>a.style.background='#ecfdf5';a.onmouseleave=()=>a.style.background='transparent';menu.appendChild(a)});
+    button.onclick=()=>{menu.style.display=menu.style.display==='grid'?'none':'grid'}; wrap.append(button,menu); nav.appendChild(wrap);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addDiscoDropdown); else addDiscoDropdown();
+  new MutationObserver(addDiscoDropdown).observe(document.documentElement,{childList:true,subtree:true});
   const discoRoutes = {LESCO:'lesco', IESCO:'iesco', GEPCO:'gepco', FESCO:'fesco', MEPCO:'mepco', PESCO:'pesco', HESCO:'hesco', SEPCO:'sepco', QESCO:'qesco', TESCO:'tesco', HAZECO:'hazeco', 'K-ELECTRIC':'k-electric'};
   document.addEventListener('click', (event) => {
     const section = event.target.closest?.('#discos');
