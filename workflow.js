@@ -73,6 +73,8 @@
     ['LESCO BILL GUIDE','lesco-bill'], ['IESCO BILL GUIDE','iesco-bill'], ['HOW TO PAY ELECTRICITY BILL ONLINE','how-to-pay-electricity-bill-online'], ['ELECTRICITY BILL CALCULATOR','electricity-bill-calculator'], ['ELECTRICITY BILL STATUS CHECK','electricity-bill-status-check']
   ];
   document.addEventListener('click', (event) => {
+    const navBlog = event.target.closest?.('a[href="#blog"]');
+    if (navBlog) { event.preventDefault(); location.href = '/blog/'; return; }
     const section = event.target.closest?.('#blog');
     if (!section) return;
     const card = event.target.closest('button, a, article, [role="button"]') || event.target;
