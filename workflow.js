@@ -10,7 +10,7 @@
     }
     el.textContent = message;
     el.style.opacity = '1'; el.style.transform = 'translate(-50%,0)';
-    clearTimeout(el._timer); el._timer = setTimeout(() => { el.style.opacity='0'; el.style.transform='translate(-50%,12px)'; }, 4200);
+    clearTimeout(el._timer); el._timer = setTimeout(() => { el.style.opacity='0'; el.style.transform='translate(-50%,12px)' }, 4200);
   };
   const fallback = (url) => {
     let box = document.getElementById('bb-workflow-fallback');
@@ -28,5 +28,17 @@
     toast('Opening the official bill portal…');
     setTimeout(() => fallback(form.action), 350);
   }, true);
+  const addDisclaimer = () => {
+    if (document.querySelector('.bb-disclaimer')) return;
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+    const p = document.createElement('p');
+    p.className = 'bb-disclaimer';
+    p.innerHTML = '<strong>Disclaimer:</strong> BijleeBill.pk is an independent bill-checking convenience service and is not affiliated with, endorsed by, or connected to PITC, any DISCO, K-Electric, or the Government of Pakistan. We are not representing any of these organizations. All company names, logos and trademarks shown on this site are the property of their respective owners and are used for identification purposes only. Your reference number is sent directly to the official public portals (bill.pitc.com.pk / ke.com.pk); saved numbers stay in your browser only. For payments, always use official DISCO / bank channels.';
+    p.style.cssText = 'margin:0 auto;padding:18px 20px;border-top:1px solid #eef2f0;max-width:1320px;color:#64748b;font:500 12px/1.7 system-ui,sans-serif;text-align:center';
+    footer.appendChild(p);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addDisclaimer); else addDisclaimer();
+  new MutationObserver(addDisclaimer).observe(document.documentElement, { childList:true, subtree:true });
   window.BijleeBillWorkflow = { toast, fallback };
 })();
