@@ -48,6 +48,7 @@
   const addDiscoDropdown = () => {
     const nav = document.querySelector('header nav');
     if (!nav || nav.querySelector('.bb-disco-dropdown')) return;
+    [...nav.children].filter(el => /^DISCOs\b/i.test((el.textContent || '').trim())).forEach(el => el.remove());
     const wrap = document.createElement('div'); wrap.className='bb-disco-dropdown'; wrap.style.cssText='position:relative;display:inline-block';
     const button = document.createElement('button'); button.type='button'; button.textContent='DISCOs ▾'; button.style.cssText='border:0;background:transparent;border-radius:999px;padding:8px 14px;color:#475569;font:600 14px inherit;cursor:pointer';
     const menu = document.createElement('div'); menu.style.cssText='display:none;position:absolute;top:100%;right:0;z-index:100;background:#fff;border:1px solid #dbe7e1;border-radius:16px;padding:8px;min-width:190px;box-shadow:0 18px 40px #064e3b22;grid-template-columns:1fr 1fr;gap:2px';
@@ -67,6 +68,17 @@
       event.preventDefault();
       location.href = '/disco/' + discoRoutes[code] + '/';
     }
+  }, true);
+  const blogRoutes = [
+    ['LESCO BILL GUIDE','lesco-bill'], ['IESCO BILL GUIDE','iesco-bill'], ['HOW TO PAY ELECTRICITY BILL ONLINE','how-to-pay-electricity-bill-online'], ['ELECTRICITY BILL CALCULATOR','electricity-bill-calculator'], ['ELECTRICITY BILL STATUS CHECK','electricity-bill-status-check']
+  ];
+  document.addEventListener('click', (event) => {
+    const section = event.target.closest?.('#blog');
+    if (!section) return;
+    const card = event.target.closest('button, a, article, [role="button"]') || event.target;
+    const text = (card.textContent || '').toUpperCase();
+    const match = blogRoutes.find(([label]) => text.includes(label));
+    if (match && !event.defaultPrevented) { event.preventDefault(); location.href = '/blog/' + match[1] + '/'; }
   }, true);
   window.BijleeBillWorkflow = { toast, fallback };
 })();
