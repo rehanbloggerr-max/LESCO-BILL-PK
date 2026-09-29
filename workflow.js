@@ -45,5 +45,17 @@
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addDisclaimer); else addDisclaimer();
   new MutationObserver(addDisclaimer).observe(document.documentElement, { childList:true, subtree:true });
+  const discoRoutes = {LESCO:'lesco', IESCO:'iesco', GEPCO:'gepco', FESCO:'fesco', MEPCO:'mepco', PESCO:'pesco', HESCO:'hesco', SEPCO:'sepco', QESCO:'qesco', TESCO:'tesco', HAZECO:'hazeco', 'K-ELECTRIC':'k-electric'};
+  document.addEventListener('click', (event) => {
+    const section = event.target.closest?.('#discos');
+    if (!section) return;
+    const card = event.target.closest('button, a, article, [role="button"]') || event.target;
+    const text = (card.textContent || '').toUpperCase();
+    const code = Object.keys(discoRoutes).find(key => text.includes(key));
+    if (code && !event.defaultPrevented) {
+      event.preventDefault();
+      location.href = '/disco/' + discoRoutes[code] + '/';
+    }
+  }, true);
   window.BijleeBillWorkflow = { toast, fallback };
 })();
