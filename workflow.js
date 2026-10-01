@@ -19,12 +19,13 @@
       box.style.cssText = 'position:fixed;left:50%;bottom:76px;z-index:9998;transform:translateX(-50%);background:#fff;border:1px solid #dbe7e1;border-radius:16px;padding:12px 14px;box-shadow:0 10px 30px #06281c22;display:flex;gap:10px;align-items:center;font:600 13px system-ui,sans-serif;max-width:92vw';
       document.body.appendChild(box);
     }
-    box.innerHTML = '<span>Popup blocked?</span><a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="noopener" style="color:#047857;font-weight:800">Open official bill →</a>';
+    box.innerHTML = '<span>Popup blocked?</span><a href="'+url.replace(/"/g,'&quot;')+'" target="_blank" rel="noopener noreferrer" style="color:#047857;font-weight:800">Open official bill →</a>';
     setTimeout(() => box.remove(), 9000);
   };
   document.addEventListener('submit', (event) => {
     const form = event.target;
     if (!(form instanceof HTMLFormElement) || !/^https:\/\/(bill\.pitc\.com\.pk|bill\.lesco\.gov\.pk)/.test(form.action)) return;
+    form.setAttribute('rel', 'noopener noreferrer');
     toast('Opening the official bill portal…');
     setTimeout(() => fallback(form.action), 350);
   }, true);
