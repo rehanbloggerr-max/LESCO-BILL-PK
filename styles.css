@@ -109,3 +109,9 @@
   .bb-static-form{border-radius:20px;padding:14px}
   .bb-static-billcard{border-radius:24px;padding:24px}
 }
+
+/* Mobile-first usability: show the interactive bill checker before hero copy. */
+@media (max-width: 1023.98px){
+  section#top{padding-top:92px !important;padding-bottom:52px !important}
+  section#top .bb-mobile-checker-first{order:-1;padding-top:0 !important}
+}
