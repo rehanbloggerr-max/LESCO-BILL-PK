@@ -42,17 +42,33 @@
   ! Cache-Control
   Cache-Control: public, max-age=3600
 
+/styles-*.css
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
 /workflow.js
   ! Cache-Control
   Cache-Control: public, max-age=3600
+
+/workflow-*.js
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
 
 /blog/article.css
   ! Cache-Control
   Cache-Control: public, max-age=3600
 
+/blog/article-*.css
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
 /blog/article.js
   ! Cache-Control
   Cache-Control: public, max-age=3600
+
+/blog/article-*.js
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
 
 /robots.txt
   ! Cache-Control
