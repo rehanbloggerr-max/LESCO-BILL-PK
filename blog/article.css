@@ -1,3 +1,5 @@
+@font-face{font-display:swap;font-family:'Plus Jakarta Sans';font-style:normal;font-weight:100 900;src:url('../fonts/plus-jakarta-sans-latin-var.woff2') format('woff2')}
+@font-face{font-display:swap;font-family:'Outfit';font-style:normal;font-weight:100 900;src:url('../fonts/outfit-latin-var.woff2') format('woff2')}
 @font-face{font-display:swap;font-family:'JetBrains Mono';font-style:normal;font-weight:400;src:url('../fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2')}
 @font-face{font-display:swap;font-family:'JetBrains Mono';font-style:normal;font-weight:500;src:url('../fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2')}
 @font-face{font-display:swap;font-family:'JetBrains Mono';font-style:normal;font-weight:600;src:url('../fonts/jetbrains-mono-latin-600-normal.woff2') format('woff2')}
