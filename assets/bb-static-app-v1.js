@@ -424,12 +424,17 @@
     var top = $('#top');
     if (!top) return;
     var accent = (disco && disco.color) || '#059669';
-    try { top.style.setProperty('--accent', accent); } catch (e) {}
     var h1 = $('h1', top);
     var accentSpan = h1 ? $('span.relative.inline-block', h1) : null;
-    if (accentSpan) accentSpan.style.color = accent;
     var cursor = accentSpan ? $('span.animate-blink', accentSpan) : null;
-    if (cursor) cursor.style.background = accent;
+    /* app: `ae = F[W].color` is applied to the section, the H1 word and the cursor
+       (drives the glow behind the card, the spotlight, the canvas + border-spin) */
+    function applyAccent(color) {
+      try { top.style.setProperty('--accent', color); } catch (e) {}
+      if (accentSpan) accentSpan.style.color = color;
+      if (cursor) cursor.style.background = color;
+    }
+    applyAccent(accent);
     /* paragraph */
     var p = $('p.mt-7', top);
     if (p) {
@@ -450,9 +455,12 @@
       tn = d.createTextNode('');
       accentSpan.insertBefore(tn, accentSpan.firstChild);
     }
-    var texts = disco ? [disco.short] : DISCOS.map(function (x) { return x.short; });
+    var cycle = [{ label: 'bijlee', color: '#059669' }].concat(
+      DISCOS.map(function (x) { return { label: x.short, color: x.color }; }));
+    var texts = disco ? [disco.short] : cycle.map(function (c) { return c.label; });
+    var cols = disco ? [disco.color] : cycle.map(function (c) { return c.color; });
     var fixed = !!disco;
-    if (reduced()) { tn.nodeValue = texts[0]; return; }
+    if (reduced()) { tn.nodeValue = texts[0]; applyAccent(cols[0]); return; }
     var idx = 0, cur = '';
     function step() {
       var target = texts[idx];
@@ -473,8 +481,8 @@
       }
     }
     function del() { cur = cur.slice(0, -1); tn.nodeValue = cur; heroTimer = setTimeout(cur.length ? del : next, 32); }
-    function next() { idx = (idx + 1) % texts.length; step(); }
-    cur = ''; tn.nodeValue = ''; step();
+    function next() { idx = (idx + 1) % texts.length; applyAccent(cols[idx]); step(); }
+    cur = ''; tn.nodeValue = ''; applyAccent(cols[0]); step();
   }
 
   /* ============================ 3. hero network canvas ============================ */
