@@ -11,6 +11,8 @@
   'use strict';
 
   var d = document;
+  /* tiny bridge so the hero chips / disco tiles can drive the checker */
+  var BB = { setDisco: null, currentDisco: null, onDiscoChange: null };
   function $(s, r) { return (r || d).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || d).querySelectorAll(s)); }
   function on(el, ev, fn, o) { if (el) el.addEventListener(ev, fn, o || false); }
@@ -248,7 +250,11 @@
       renderHero(disco, opts && opts.silent);
       renderSaved();
       closePanel();
+      try { if (st.discoId) form.setAttribute('data-disco', st.discoId); else form.removeAttribute('data-disco'); } catch (e2) {}
+      if (BB.onDiscoChange) { try { BB.onDiscoChange(disco); } catch (e) {} }
     }
+    BB.setDisco = function (id) { setDisco(id); };
+    BB.currentDisco = function () { return currentDisco(); };
 
     function openPanel() {
       if (!panel) return;
@@ -1037,6 +1043,130 @@
     }, 4500);
   }
 
+  /* ==================== 4b. hero chips / CTA / disco tiles / header dropdown ==================== */
+
+  function initHeroChips() {
+    var top = $('#top');
+    if (!top) return;
+    var label = top.querySelector('div[class*="uppercase tracking-wider"]');
+    var wrap = label ? label.nextElementSibling : null;
+    if (!wrap) return;
+    var prev = wrap.nextElementSibling;
+    var chips = $$('button', wrap);
+    if (!chips.length) return;
+    var hovered = null;
+    var SEL_OFF = 'text-white shadow-lg';
+    var IDLE = 'bg-white/80 text-slate-700 backdrop-blur hover:-translate-y-0.5';
+
+    function discoOf(btn) {
+      var t = (btn.textContent || '').trim();
+      for (var i = 0; i < DISCOS.length; i++) if (DISCOS[i].short === t) return DISCOS[i];
+      return null;
+    }
+    function paint() {
+      var sel = BB.currentDisco ? BB.currentDisco() : null;
+      chips.forEach(function (c) {
+        var disc = discoOf(c);
+        if (!disc) return;
+        var on = !!(sel && sel.id === disc.id);
+        var hov = hovered === disc.id;
+        if (on) { rmCls(c, IDLE); addCls(c, SEL_OFF); } else { rmCls(c, SEL_OFF); addCls(c, IDLE); }
+        c.style.borderColor = (on || hov) ? disc.color : '#e2e8f0';
+        c.style.background = on ? disc.color : '';
+        c.style.boxShadow = on ? ('0 10px 24px -8px ' + disc.color)
+                              : (hov ? ('0 6px 16px -8px ' + disc.color) : '');
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+      if (!prev) return;
+      var hd = hovered ? discoById(hovered) : null;
+      if (hd) prev.innerHTML = '<span class="animate-fade-up">' + hd.region + ' \u00b7 ' + hd.cities.slice(0, 3).join(', ') + '</span>';
+      else if (sel) prev.innerHTML = '<span>Serving ' + sel.region + ' \u00b7 ' + sel.cities.slice(0, 3).join(', ') + ' & more</span>';
+      else prev.innerHTML = '';
+    }
+    chips.forEach(function (c) {
+      var disc = discoOf(c);
+      if (!disc) return;
+      on(c, 'click', function () { if (BB.setDisco) BB.setDisco((BB.currentDisco() && BB.currentDisco().id === disc.id) ? null : disc.id); });
+      on(c, 'pointerenter', function () { hovered = disc.id; paint(); });
+      on(c, 'pointerleave', function () { hovered = null; paint(); });
+    });
+    BB.onDiscoChange = paint;
+    paint();
+  }
+
+  function initHeroCta() {
+    var top = $('#top');
+    if (!top) return;
+    var row = top.querySelector('div[class*="flex-wrap items-center gap-3"]');
+    var cta = row ? row.querySelector('button') : null;
+    if (!cta) return;
+    /* app: onClick={oe} -> scroll the checker into view, focus the input 550 ms later */
+    on(cta, 'click', function () {
+      var card = $('#checker-card');
+      if (card && card.scrollIntoView) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(function () {
+        var inp = $('#bill-input');
+        if (!inp) return;
+        try { inp.focus({ preventScroll: true }); } catch (e) { inp.focus(); }
+      }, 550);
+    });
+    /* app wraps this button in S0(): pointer tilt translate(dx*.18, dy*.28) */
+    on(cta, 'pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = cta.getBoundingClientRect();
+      var mx = (e.clientX - (r.left + r.width / 2)) * .18;
+      var my = (e.clientY - (r.top + r.height / 2)) * .28;
+      cta.style.transition = 'transform 0.2s ease-out';
+      cta.style.transform = 'translate(' + mx.toFixed(1) + 'px, ' + my.toFixed(1) + 'px)';
+    });
+    on(cta, 'pointerleave', function () { cta.style.transform = ''; });
+  }
+
+  function initDiscoGrid() {
+    var sec = $('#discos');
+    if (!sec) return;
+    var grid = sec.querySelector('div[class*="sm:grid-cols-2"]') || sec;
+    var tiles = $$('button', grid);
+    tiles.forEach(function (t) {
+      /* app: onPick -> scroll #top (block start) then focus the input 700 ms later */
+      on(t, 'click', function () {
+        var top = $('#top');
+        if (top && top.scrollIntoView) top.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(function () {
+          var inp = $('#bill-input');
+          if (!inp) return;
+          try { inp.focus({ preventScroll: true }); } catch (e) { inp.focus(); }
+        }, 700);
+      });
+      on(t, 'pointermove', function (e) {
+        var r = t.getBoundingClientRect();
+        t.style.setProperty('--x', (e.clientX - r.left) + 'px');
+        t.style.setProperty('--y', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  function initHeaderDropdown() {
+    var dd = $('.bb-disco-dropdown');
+    if (!dd) return;
+    var btn = $('button', dd);
+    var panel = btn ? btn.nextElementSibling : null;
+    if (!btn || !panel) return;
+    function setOpen(open) {
+      panel.style.display = open ? 'grid' : 'none';
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    setOpen(false);
+    on(btn, 'click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      setOpen(panel.style.display === 'none');
+    });
+    on(d, 'click', function (e) { if (!dd.contains(e.target)) setOpen(false); });
+    on(d, 'keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+    on(panel, 'click', function (e) { if (e.target.closest('a')) setOpen(false); });
+  }
+
   /* ============================ boot ============================ */
   ready(function () {
     try { initChecker(); } catch (e) {}
@@ -1047,5 +1177,9 @@
     try { initLive(); } catch (e) {}
     try { initCanvas(); } catch (e) {}
     try { initHeroParallax(); } catch (e) {}
+    try { initHeroChips(); } catch (e) {}
+    try { initHeroCta(); } catch (e) {}
+    try { initDiscoGrid(); } catch (e) {}
+    try { initHeaderDropdown(); } catch (e) {}
   });
 })();
