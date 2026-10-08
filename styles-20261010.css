@@ -153,3 +153,7 @@
 
 /* ---- hover util missing from tailwind build ---- */
 .hover\:text-slate-900:hover{color:#0f172a}
+
+/* bb-cursor-pointer */
+/* clickable controls -> hand cursor (a.href already does this natively) */
+button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled),summary,select:not(:disabled),input[type="submit"]:not(:disabled),input[type="button"]:not(:disabled),input[type="reset"]:not(:disabled),input[type="checkbox"]:not(:disabled),input[type="radio"]:not(:disabled),input[type="range"]:not(:disabled),label[for]{cursor:pointer}
