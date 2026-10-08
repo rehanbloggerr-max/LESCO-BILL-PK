@@ -13,7 +13,7 @@
   <link rel="preload" href="/fonts/jetbrains-mono-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <title>BijleeBill.pk — Check Electricity Bill Online in Pakistan</title>
-    <link rel="preload" href="./styles-20261005.css" as="style" id="fullcss">
+    <link rel="preload" href="./styles-20261008.css" as="style" id="fullcss">
     <link rel="modulepreload" href="./assets/index-ref-locator-v1.js" crossorigin fetchpriority="low">
     <style>@layer properties,theme,base,components,utilities;
 @font-face{font-display:swap;font-family:'Plus Jakarta Sans';font-style:normal;font-weight:100 900;src:url('/fonts/plus-jakarta-sans-latin-var.woff2') format('woff2')}
@@ -135,13 +135,28 @@
   .bb-static-billcard{border-radius:24px;padding:24px}
 }
 
+/* Mobile-first: show the static checker before the hero copy.
+   Mirrors the app's own mobile layout (bb-mobile-checker-first, order:-1). */
+@media (max-width:1023.98px){
+  .bb-static-hero>div{display:flex;flex-direction:column}
+  .bb-static-checker{order:-1;margin-top:0;margin-bottom:22px}
+}
+
 /* Mobile-first usability: show the interactive bill checker before hero copy. */
 @media (max-width: 1023.98px){
   section#top{padding-top:92px !important;padding-bottom:52px !important}
   section#top .bb-mobile-checker-first{order:-1;padding-top:0 !important}
+}
+
+/* Desktop parity: the app renders the checker card in the right column.
+   The static shell mirrors that so the checker is visible before React boots. */
+.bb-static-side{display:grid;gap:22px;align-content:start;min-width:0}
+@media (max-width:1023.98px){
+  .bb-static-hero{grid-template-columns:1fr}
+  .bb-static-hero>.bb-static-side{display:contents}
 }</style>
     <script>var l=document.getElementById("fullcss"),a=function(){l.rel="stylesheet"},r=performance.getEntriesByName(l.href);r.length&&r[0].responseEnd>0?a():l.addEventListener("load",a);addEventListener("load",function(){setTimeout(a,0)});</script>
-    <noscript><link rel="stylesheet" href="./styles-20261005.css"></noscript>
+    <noscript><link rel="stylesheet" href="./styles-20261008.css"></noscript>
     <script src="./workflow-20261005.js" defer></script>
     <script>var d=0,g=function(){if(d)return;d=1;var s=document.createElement("script");s.type="module";s.src="/assets/index-ref-locator-v1.js";document.head.appendChild(s)};addEventListener("pointerdown",g,{once:true,passive:true});addEventListener("keydown",g,{once:true});addEventListener("load",function(){(self.requestIdleCallback||function(f){setTimeout(f,300)})(g,{timeout:1000})});</script>
     <script>var f=document.getElementById("bb-static-home"),d=document.getElementById("bb-static-disco"),r=document.getElementById("bb-static-ref"),u=function(v){return v==="ke"?"https://www.ke.com.pk/customer-services/view-and-pay-your-bill/":"https://bill.pitc.com.pk/"+v+"bill/general"};d.addEventListener("change",function(){f.action=u(d.value)});f.addEventListener("submit",function(e){var v=d.value,n=(r.value||"").replace(/\D/g,"");if(n.length<4){e.preventDefault();r.focus();return}e.preventDefault();var url=u(v);if(v!=="ke")url+="?refno="+encodeURIComponent(n);window.open(url,"_blank","noopener")});</script>
@@ -174,16 +189,19 @@
         <p class="bb-static-pill">Free • private • official portal links</p>
         <h1>Check your electricity bill online in Pakistan.</h1>
         <p class="bb-static-lede">BijleeBill.pk helps you open the official duplicate bill page for LESCO, IESCO, GEPCO, FESCO, MEPCO, PESCO, HESCO, SEPCO, QESCO, TESCO, HAZECO and K-Electric. Choose your company, enter your 14-digit reference number, and the official portal opens directly.</p>
-        <form class="bb-static-form" id="bb-static-home" action="https://bill.pitc.com.pk/lescobill/general" method="get" target="_blank" rel="noopener noreferrer"><label for="bb-static-disco">Choose your power company</label><select id="bb-static-disco"><option value="lesco" selected>LESCO &#8212; Lahore region</option><option value="iesco">IESCO &#8212; Capital region</option><option value="gepco">GEPCO &#8212; Gujranwala region</option><option value="fesco">FESCO &#8212; Faisalabad region</option><option value="mepco">MEPCO &#8212; South Punjab</option><option value="pesco">PESCO &#8212; Khyber Pakhtunkhwa</option><option value="hesco">HESCO &#8212; Lower Sindh</option><option value="sepco">SEPCO &#8212; Upper Sindh</option><option value="qesco">QESCO &#8212; Balochistan</option><option value="tesco">TESCO &#8212; Merged districts</option><option value="hazeco">HAZECO &#8212; Hazara division</option><option value="ke">K-Electric &#8212; Karachi</option></select><label for="bb-static-ref">Reference number (digits only)</label><input id="bb-static-ref" name="refno" type="text" inputmode="numeric" pattern="[0-9]{4,18}" maxlength="18" autocomplete="off" placeholder="07123456789012" required><button type="submit">Check official bill</button><small>Opens the official duplicate bill in a new tab. We never see or store this number.</small></form>
+        
         <div class="bb-static-actions"><a class="bb-static-primary" href="#static-discos">Choose your company</a><a class="bb-static-secondary" href="/blog/">Read bill guides</a></div>
         <ul class="bb-static-trust" aria-label="Benefits"><li>Direct PITC and KE links</li><li>No signup or app required</li><li>Numbers stay in your browser</li></ul>
       </div>
-      <aside class="bb-static-billcard" aria-label="Bill checking summary">
+      <div class="bb-static-side">
+        <form class="bb-static-checker bb-static-form" id="bb-static-home" action="https://bill.pitc.com.pk/lescobill/general" method="get" target="_blank" rel="noopener noreferrer"><label for="bb-static-disco">Choose your power company</label><select id="bb-static-disco"><option value="lesco" selected>LESCO &#8212; Lahore region</option><option value="iesco">IESCO &#8212; Capital region</option><option value="gepco">GEPCO &#8212; Gujranwala region</option><option value="fesco">FESCO &#8212; Faisalabad region</option><option value="mepco">MEPCO &#8212; South Punjab</option><option value="pesco">PESCO &#8212; Khyber Pakhtunkhwa</option><option value="hesco">HESCO &#8212; Lower Sindh</option><option value="sepco">SEPCO &#8212; Upper Sindh</option><option value="qesco">QESCO &#8212; Balochistan</option><option value="tesco">TESCO &#8212; Merged districts</option><option value="hazeco">HAZECO &#8212; Hazara division</option><option value="ke">K-Electric &#8212; Karachi</option></select><label for="bb-static-ref">Reference number (digits only)</label><input id="bb-static-ref" name="refno" type="text" inputmode="numeric" pattern="[0-9]{4,18}" maxlength="18" autocomplete="off" placeholder="07123456789012" required><button type="submit">Check official bill</button><small>Opens the official duplicate bill in a new tab. We never see or store this number.</small></form>
+        <aside class="bb-static-billcard" aria-label="Bill checking summary">
         <span class="bb-static-billtag">Duplicate bill</span>
         <h2>14-digit reference number</h2>
         <p>Find it on the top-left of your old electricity bill. Enter digits only — do not include a final U or R letter.</p>
         <a href="#static-discos">Select DISCO to continue</a>
       </aside>
+      </div>
     </section>
     <section class="bb-static-section" id="how"><div class="bb-static-width"><p class="bb-static-pill">How it works</p><h2>Three simple steps to your official bill</h2><div class="bb-static-steps"><article><span>01</span><h3>Select your DISCO</h3><p>Pick the company printed on your old bill, from Lahore to Karachi and Quetta to Peshawar.</p></article><article><span>02</span><h3>Enter your reference</h3><p>Type the 14-digit reference number, or use the customer ID flow where supported.</p></article><article><span>03</span><h3>Open official portal</h3><p>A new tab opens on bill.pitc.com.pk or ke.com.pk with your duplicate bill ready to view or print.</p></article></div></div></section>
     <section class="bb-static-section" id="static-discos"><div class="bb-static-width"><p class="bb-static-pill">All power companies</p><h2>Select your electricity company</h2><p class="bb-static-sectionsub">Every Pakistan DISCO is supported, including K-Electric through its dedicated official portal.</p><div class="bb-static-disco-grid"><a class="bb-static-disco-card" href="/disco/lesco/"><span class="bb-static-disco-badge" style="--disco:#2563eb">LES</span><strong>LESCO</strong><small>Lahore region</small><span class="bb-static-cardlink">Check Lahore, Kasur bills →</span></a>
