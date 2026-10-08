@@ -13,6 +13,7 @@
   <link rel="preload" href="/fonts/jetbrains-mono-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <title>HESCO Bill Check Online — BijleeBill.pk</title>
     <link rel="preload" href="../../styles-20261005.css" as="style" id="fullcss">
+    <link rel="modulepreload" href="../../assets/index-ref-locator-v1.js" crossorigin fetchpriority="low">
     <style>@layer properties,theme,base,components,utilities;
 @font-face{font-display:swap;font-family:'Plus Jakarta Sans';font-style:normal;font-weight:100 900;src:url('/fonts/plus-jakarta-sans-latin-var.woff2') format('woff2')}
 @font-face{font-display:swap;font-family:'Outfit';font-style:normal;font-weight:100 900;src:url('/fonts/outfit-latin-var.woff2') format('woff2')}
@@ -99,6 +100,8 @@
 .bb-static-form label{color:#334155;font-size:14px;font-weight:900}
 .bb-static-form input{width:100%;box-sizing:border-box;border:2px solid #cbd5e1;border-radius:16px;padding:15px 16px;color:#0f172a;font:700 17px/1 "JetBrains Mono",monospace;letter-spacing:.04em;outline:none}
 .bb-static-form input:focus{border-color:#047857;box-shadow:0 0 0 4px #d1fae5}
+.bb-static-form select{width:100%;box-sizing:border-box;border:2px solid #cbd5e1;border-radius:16px;padding:15px 16px;color:#0f172a;background:#fff;outline:none;font:700 16px/1.3 "Plus Jakarta Sans",system-ui,sans-serif}
+.bb-static-form select:focus{border-color:#047857;box-shadow:0 0 0 4px #d1fae5}
 .bb-static-form button{border:0;border-radius:16px;background:#047857;color:#fff;padding:15px 18px;font-size:16px;font-weight:900;cursor:pointer}
 .bb-static-form button:hover{background:#065f46}
 .bb-static-form small{margin:0;color:#64748b;line-height:1.55}
@@ -139,7 +142,7 @@
     <script>var l=document.getElementById("fullcss"),a=function(){l.rel="stylesheet"},r=performance.getEntriesByName(l.href);r.length&&r[0].responseEnd>0?a():l.addEventListener("load",a);addEventListener("load",function(){setTimeout(a,0)});</script>
     <noscript><link rel="stylesheet" href="../../styles-20261005.css"></noscript>
     <script src="../../workflow-20261005.js" defer></script>
-    <script>var d=0,g=function(){if(d)return;d=1;var s=document.createElement("script");s.type="module";s.src="/assets/index-ref-locator-v1.js";document.head.appendChild(s)};addEventListener("pointerdown",g,{once:true,passive:true});addEventListener("keydown",g,{once:true});addEventListener("load",function(){(self.requestIdleCallback||function(f){setTimeout(f,300)})(g,{timeout:3000})});</script>
+    <script>var d=0,g=function(){if(d)return;d=1;var s=document.createElement("script");s.type="module";s.src="/assets/index-ref-locator-v1.js";document.head.appendChild(s)};addEventListener("pointerdown",g,{once:true,passive:true});addEventListener("keydown",g,{once:true});addEventListener("load",function(){(self.requestIdleCallback||function(f){setTimeout(f,300)})(g,{timeout:1000})});</script>
     <link rel="canonical" href="https://lesco-bill-pk.rehanbloggerr.workers.dev/disco/hesco/"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
   <link rel="icon" href="/favicon.ico" sizes="any"/>
