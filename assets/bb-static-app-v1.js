@@ -485,7 +485,7 @@
     var host = canvas.closest('[data-network-host]') || canvas.parentElement;
     var top = $('#top');
     var ctx = canvas.getContext('2d');
-    var W = 0, H = 0, pts = [], mouse = { x: -9999, y: -9999, on: false }, pulses = [], raf = 0, last = 0, running = false;
+    var W = 0, H = 0, pts = [], mouse = { x: -9999, y: -9999, on: false }, pulses = [], ripples = [], nbr = [], lastPulse = 0, raf = 0, running = false;
     var LINK = 150, MRAD = 200;
 
     function accent() {
@@ -505,16 +505,16 @@
         for (var i = 0; i < n; i++) pts.push({ nx: Math.random(), ny: Math.random(), vx: (Math.random() - .5) * 18e-5, vy: (Math.random() - .5) * 28e-5, r: 1.2 + Math.random() * 1.7, glow: 0 });
       }
       /* soft reset positions of the mouse glow */
-      draw(0, false);
+      draw(false, 0);
     }
-    function draw(dt, animate) {
+    function draw(animate, ts) {
       var rgb = accent();
       ctx.clearRect(0, 0, W, H);
       var n = pts.length, i, j, x = [], y = [];
       for (i = 0; i < n; i++) {
         var p = pts[i];
         if (animate) {
-          p.nx += p.vx * dt; p.ny += p.vy * dt;
+          p.nx += p.vx; p.ny += p.vy;
           if (p.nx < 0 || p.nx > 1) p.vx *= -1;
           if (p.ny < 0 || p.ny > 1) p.vy *= -1;
           p.glow *= 0.94;
@@ -522,7 +522,7 @@
         x[i] = p.nx * W; y[i] = p.ny * H;
       }
       ctx.lineWidth = 1;
-      var nbr = pts.map(function () { return []; });
+      nbr = pts.map(function () { return []; });
       for (i = 0; i < n; i++) for (j = i + 1; j < n; j++) {
         var dx = x[i] - x[j], dy = y[i] - y[j], dist2 = dx * dx + dy * dy;
         if (dist2 < LINK * LINK) {
@@ -563,42 +563,65 @@
       for (i = pulses.length - 1; i >= 0; i--) {
         var pu = pulses[i], a = pts[pu.a], b = pts[pu.b];
         if (!a || !b) { pulses.splice(i, 1); continue; }
-        if (animate) pu.t += pu.speed * dt;
+        if (animate) pu.t += pu.speed;
         if (pu.t >= 1) {
-          if (pu.hops > 1 && nbr[pu.b] && nbr[pu.b].length) {
-            var pick = nbr[pu.b][Math.floor(Math.random() * nbr[pu.b].length)];
+          if (pts[pu.b]) pts[pu.b].glow = 1;                       /* app: arrival lights the node */
+          if (pu.hops > 0 && nbr[pu.b] && nbr[pu.b].length) {      /* app: hops counts down to 0 */
+            var others = nbr[pu.b].filter(function (z) { return z !== pu.a; });
+            var pick = (others.length ? others : nbr[pu.b])[Math.floor(Math.random() * (others.length || nbr[pu.b].length))];
             pulses.splice(i, 1);
-            pulses.push({ a: pu.b, b: pick, t: 0, speed: .011 + Math.random() * .012, hops: pu.hops - 1, amber: pu.amber });
+            pulses.push({ a: pu.b, b: pick, t: 0, speed: pu.speed, hops: pu.hops - 1, amber: pu.amber });
           } else { pulses.splice(i, 1); }
           continue;
         }
         var px = x[pu.a] + (x[pu.b] - x[pu.a]) * pu.t, py = y[pu.a] + (y[pu.b] - y[pu.a]) * pu.t;
+        var tx = Math.max(0, pu.t - .2);
+        var qx = x[pu.a] + (x[pu.b] - x[pu.a]) * tx, qy = y[pu.a] + (y[pu.b] - y[pu.a]) * tx;
         var col = pu.amber ? [245, 158, 11] : rgb;
-        ctx.fillStyle = 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',.9)';
-        ctx.beginPath(); ctx.arc(px, py, 2.6, 0, Math.PI * 2); ctx.fill();
+        var grd2 = ctx.createLinearGradient(qx, qy, px, py);
+        grd2.addColorStop(0, 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',0)');
+        grd2.addColorStop(1, 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',.95)');
+        ctx.strokeStyle = grd2; ctx.lineWidth = 2.2; ctx.lineCap = 'round';
+        ctx.beginPath(); ctx.moveTo(qx, qy); ctx.lineTo(px, py); ctx.stroke();
+        ctx.fillStyle = 'rgb(' + col[0] + ',' + col[1] + ',' + col[2] + ')';
+        ctx.shadowColor = 'rgb(' + col[0] + ',' + col[1] + ',' + col[2] + ')'; ctx.shadowBlur = 12;
+        ctx.beginPath(); ctx.arc(px, py, 2.8, 0, Math.PI * 2); ctx.fill();
+        ctx.shadowBlur = 0;
       }
-      if (animate && !reduced()) {
-        if (dt > 0 && Math.random() < .35 && pulses.length < 22) {
-          var cand = [];
-          for (i = 0; i < n; i++) if (nbr[i].length) cand.push(i);
-          if (cand.length) {
-            var a2 = cand[Math.floor(Math.random() * cand.length)];
-            var b2 = nbr[a2][Math.floor(Math.random() * nbr[a2].length)];
-            pulses.push({ a: a2, b: b2, t: 0, speed: .011 + Math.random() * .012, hops: 3, amber: Math.random() < .3 });
-          }
+      /* click ripples (app: pointerdown -> expanding ring + node glow) */
+      for (var ri = ripples.length - 1; ri >= 0; ri--) {
+        var rp = ripples[ri];
+        if (animate) rp.t += .022;
+        if (rp.t >= 1) { ripples.splice(ri, 1); continue; }
+        ctx.strokeStyle = 'rgba(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ',' + ((1 - rp.t) * .4).toFixed(4) + ')';
+        ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(rp.x, rp.y, rp.t * 300, 0, Math.PI * 2); ctx.stroke();
+        for (var q = 0; q < pts.length; q++) {
+          var dd = Math.hypot(x[q] - rp.x, y[q] - rp.y);
+          if (Math.abs(dd - rp.t * 300) < 14) pts[q].glow = Math.max(pts[q].glow, 1 - rp.t);
+        }
+      }
+      /* ambient pulses: one every 420 ms while animating, max 22 (app cadence) */
+      if (animate && !reduced() && ts && ts - lastPulse > 420 && pulses.length < 22) {
+        lastPulse = ts;
+        var cand = [];
+        for (i = 0; i < n; i++) if (nbr[i].length) cand.push(i);
+        if (cand.length) {
+          var a2 = cand[Math.floor(Math.random() * cand.length)];
+          var b2 = nbr[a2][Math.floor(Math.random() * nbr[a2].length)];
+          pulses.push({ a: a2, b: b2, t: 0, speed: .011 + Math.random() * .012, hops: 3, amber: Math.random() < .3 });
         }
       }
     }
     function loop(ts) {
       if (!running) return;
-      var dt = last ? Math.min(64, ts - last) : 16;
-      last = ts;
-      draw(dt, true);
+      if (!d.hidden) { try { draw(true, ts); } catch (e) {} }
       raf = requestAnimationFrame(loop);
     }
-    function start() { if (running || reduced()) return; running = true; last = 0; raf = requestAnimationFrame(loop); }
+    function start() { if (running || reduced()) return; running = true; raf = requestAnimationFrame(loop); }
     function stop() { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; }
     on(window, 'resize', resize);
+    if ('ResizeObserver' in window) { try { new ResizeObserver(function () { resize(); }).observe(host); } catch (e) {} }
     on(d, 'visibilitychange', function () { if (d.hidden) stop(); else start(); });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
@@ -607,18 +630,67 @@
     }
     if (host) {
       on(host, 'pointermove', function (e) {
-        if (e.pointerType === 'touch') return;
         var r = host.getBoundingClientRect();
-        mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;
+        mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; mouse.on = true;   /* app: no touch filter */
         if (top) {
-          top.style.setProperty('--sx', ((e.clientX - r.left) / Math.max(1, r.width) * 100).toFixed(3) + '%');
-          top.style.setProperty('--sy', ((e.clientY - r.top) / Math.max(1, r.height) * 100).toFixed(3) + '%');
+          top.style.setProperty('--sx', (e.clientX - r.left) + 'px');
+          top.style.setProperty('--sy', (e.clientY - r.top) + 'px');
         }
       });
       on(host, 'pointerleave', function () { mouse.on = false; mouse.x = mouse.y = -9999; });
+      on(host, 'pointerdown', function (e) {
+        var r = host.getBoundingClientRect();
+        var mx = e.clientX - r.left, my = e.clientY - r.top;
+        ripples.push({ x: mx, y: my, t: 0 });
+        var near = pts.map(function (q, idx) { return { i: idx, d: Math.hypot(q.nx * W - mx, q.ny * H - my) }; })
+                      .sort(function (p1, p2) { return p1.d - p2.d; }).slice(0, 4);
+        near.forEach(function (o2) {
+          pts[o2.i].glow = 1;
+          if (nbr[o2.i] && nbr[o2.i].length) {
+            pulses.push({ a: o2.i, b: nbr[o2.i][Math.floor(Math.random() * nbr[o2.i].length)], t: 0,
+                          speed: .011 + Math.random() * .012, hops: 3, amber: Math.random() < .3 });
+          }
+        });
+      });
     }
     resize();
-    if (reduced()) draw(0, false); else start();
+    if (reduced()) draw(false, 0); else start();
+  }
+
+  /* ============ 3b. hero parallax + checker-card tilt (ports so() / S0()) ============ */
+
+  function initHeroParallax() {
+    var top = $('#top');
+    if (!top) return;
+    var vis = $('.bb-mobile-checker-first', top);   /* app's ref x: the depth-layer wrapper */
+    function clamp1(v) { return v < -1 ? -1 : (v > 1 ? 1 : v); }
+
+    /* section pointer: --sx/--sy spotlight (px from section origin) + --mx/--my depth parallax */
+    on(top, 'pointermove', function (e) {
+      var sr = top.getBoundingClientRect();
+      top.style.setProperty('--sx', (e.clientX - sr.left) + 'px');
+      top.style.setProperty('--sy', (e.clientY - sr.top) + 'px');
+      if (!vis) return;
+      var vr = vis.getBoundingClientRect();
+      var mx = clamp1((e.clientX - (vr.left + vr.width / 2)) / (window.innerWidth / 2));
+      var my = clamp1((e.clientY - (vr.top + vr.height / 2)) / (window.innerHeight / 2));
+      vis.style.setProperty('--mx', mx.toFixed(3));
+      vis.style.setProperty('--my', my.toFixed(3));
+    });
+
+    /* checker card 3D tilt: perspective(1100px) rotateY .5..6deg / rotateX .5..5deg + spotlight vars */
+    var card = $('#checker-card');
+    if (!card) return;
+    on(card, 'pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      var r = card.getBoundingClientRect();
+      var b = (e.clientX - r.left) / r.width;
+      var z = (e.clientY - r.top) / r.height;
+      card.style.transform = 'perspective(1100px) rotateY(' + ((b - .5) * 6) + 'deg) rotateX(' + ((.5 - z) * 5) + 'deg)';
+      card.style.setProperty('--gx', (b * 100) + '%');
+      card.style.setProperty('--gy', (z * 100) + '%');
+    });
+    on(card, 'pointerleave', function () { card.style.transform = ''; });
   }
 
   /* ============================ 4. bill calculator ============================ */
@@ -966,5 +1038,6 @@
     try { initBlog(); } catch (e) {}
     try { initLive(); } catch (e) {}
     try { initCanvas(); } catch (e) {}
+    try { initHeroParallax(); } catch (e) {}
   });
 })();
