@@ -1183,3 +1183,15 @@
     try { initHeaderDropdown(); } catch (e) {}
   });
 })();
+
+/* mobile sticky check bar: hide while the checker form is on screen */
+(function () {
+  var bar = document.querySelector('.bb-sticky-check');
+  var form = document.querySelector('form') || document.querySelector('#bill-form');
+  if (!bar || !form) return;
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (en) {
+    bar.style.display = en[0].isIntersecting ? 'none' : '';
+  }, { threshold: 0.05 });
+  io.observe(form);
+})();

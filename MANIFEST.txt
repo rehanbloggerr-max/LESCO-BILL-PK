@@ -1,10 +1,7 @@
-GEPCO duplicate bill publish — 2026-10-10 (S.No 30)
-Changed files (9 content + 2 docs):
-  blog/gepco-duplicate-bill/index.html   NEW article (locked v19 template, battery GREEN, 98/100 audit)
-  blog/index.html                        GEPCO card first; chips All 14 / Guides 10; pill 14 practical guides
-  disco/gepco/index.html                 GEPCO duplicate-bill guide card added first in Guides grid
-  sitemap.xml                            31 -> 32 URLs (gepco-duplicate-bill, lastmod 2026-10-10)
-  _headers                               43 rules (sha 8fda58ae526affce) — per-route CSP incl. new article
-  images/gepco-duplicate-bill-v1{,-800,-400}.webp   NEW cover x3
-Upload order: images first, then article + shared files; _headers last.
-Shared files (blog/index.html, sitemap.xml, _headers) supersede already-live older ZIPs.
+MOBILE P0/P1 FIX ROUND — 2026-10-10 (31 files)
+Fixes: article h-scroll 6px->0 (guide-cover clamp) | tap targets: burger 40->48, mobile TOC summary 21->45, TOC links 41->45
+| font floor: text-[9px]->11px, text-[10px]->12px site-wide | mobile panel: 12 DISCO chips (44px)
+| sticky mobile "Check Bill" bar (hubs/home->checker, blog->home, articles->own DISCO hub; auto-hides while checker visible)
+| input: enterkeyhint=go, autocomplete=off, pattern=[0-9]*
+Unchanged: _headers (no inline-script change, sha 8fda58ae526affce) — do NOT re-upload.
+Verified: static audit 0/0/0 + Android emulation (390x844): hScroll 0, no font <11px visible, chips 12x44px, sticky hide/show OK, checker 14-digit input OK, 0 console errors.
