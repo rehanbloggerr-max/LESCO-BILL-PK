@@ -1,7 +1,9 @@
-P2 ROUND — 2026-10-10 (34 files)
-1) Canvas hero animation mobile par OFF (decorative; rAF loop skipped <768px) — CPU win on low-end phones.
-2) RUM beacon: LCP/CLS/INP collect hoke same-origin /cdn-cgi/rum par sendBeacon (Worker side hook baad mein; 404 harmless). window.__cwv exposed.
-3) theme-color meta: 19 pages par added, 13 pages #ecfdf5 -> #059669 (brand green address bar).
-4) content-visibility:auto TRIED + REVERTED — measured: TOC anchor jump 2750px off (Chrome skipped-content estimation). Anchor accuracy > render skip. Do NOT re-add without JS scroll fix.
-Unchanged: _headers (sha 8fda58ae526affce), styles css/article css net-zero vs mobile-fixes ZIP.
-UPLOAD ORDER: gepco ZIP -> mobile-fixes ZIP -> yeh P2 ZIP (last).
+PLAY 1 — HUB SEO TEXT BLOCKS — 2026-10-10 (14 files)
+Har 12 hub par indexable section#seo-copy (262-354 words each, 3,407 total):
+- H2 "<NAME> bill online: what it shows and how to pay it" (head keyword "<x> bill" coverage)
+- h3s: service areas (verified districts) / numbers on the bill (14-digit ref + 10-digit consumer; KE 13-digit) / paying + records
+- duplicate-bill article link jahan article live hai (5), warna reference-number/not-received guide
+- 3 unique FAQs per hub + FAQPage JSON-LD (text-exact)
+Checker above-the-fold intact (formY ~170px) | 0 console errors | static audit 0/0/0
+_headers regenerated: /disco/* wildcard ab 25 inline hashes (union) — include LAST in upload.
+UPLOAD ORDER ab: gepco -> mobile-fixes -> p2 -> play1-hub-seo (last).
