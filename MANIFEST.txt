@@ -1,0 +1,10 @@
+GEPCO duplicate bill publish — 2026-10-10 (S.No 30)
+Changed files (9 content + 2 docs):
+  blog/gepco-duplicate-bill/index.html   NEW article (locked v19 template, battery GREEN, 98/100 audit)
+  blog/index.html                        GEPCO card first; chips All 14 / Guides 10; pill 14 practical guides
+  disco/gepco/index.html                 GEPCO duplicate-bill guide card added first in Guides grid
+  sitemap.xml                            31 -> 32 URLs (gepco-duplicate-bill, lastmod 2026-10-10)
+  _headers                               43 rules (sha 8fda58ae526affce) — per-route CSP incl. new article
+  images/gepco-duplicate-bill-v1{,-800,-400}.webp   NEW cover x3
+Upload order: images first, then article + shared files; _headers last.
+Shared files (blog/index.html, sitemap.xml, _headers) supersede already-live older ZIPs.

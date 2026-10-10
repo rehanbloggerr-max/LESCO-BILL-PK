@@ -1,0 +1,7 @@
+DEPLOY NOTES — gepco-duplicate-bill 2026-10-10
+1) Upload all files to the Workers root (paths as in this ZIP).
+2) After upload: curl -sI .../blog/gepco-duplicate-bill/ and confirm CSP matches the _headers entry.
+3) Verify: /blog/ first card = GEPCO; /disco/gepco/ first guide card = GEPCO; sitemap 32 URLs.
+4) Local pre-verify already done: static audit 0/0/0 (32 pages) + puppeteer runtime 0 console errors
+   (article styled, cover loads, FAQ 7, hub click-through OK).
+5) CSV row 30 flips to Live only after live byte-verify (next turn).
