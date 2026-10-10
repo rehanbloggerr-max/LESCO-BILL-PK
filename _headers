@@ -32,6 +32,9 @@
 /blog/electricity-bill-status-check/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-CJshq8FJwINHNTp0DbMhUK7TJnuntuKfIMFmohtJXa4='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
+/blog/fesco-duplicate-bill/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-iEeUbl/feL9F93dws02Vp0ITEL7pUVniWMCHhHQkAj4='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
 /blog/how-to-pay-electricity-bill-online/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-yHcCc75xwzhQ5Em0ROSJztGTLB95GcTtXP5l/E3+mck='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
