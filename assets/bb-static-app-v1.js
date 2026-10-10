@@ -496,6 +496,7 @@
   function initCanvas() {
     var canvas = $('canvas');
     if (!canvas || !canvas.getContext) return;
+    if (window.matchMedia && window.matchMedia('(max-width: 767px)').matches) { canvas.style.display = 'none'; return; }
     var host = canvas.closest('[data-network-host]') || canvas.parentElement;
     var top = $('#top');
     var ctx = canvas.getContext('2d');
@@ -1194,4 +1195,20 @@
     bar.style.display = en[0].isIntersecting ? 'none' : '';
   }, { threshold: 0.05 });
   io.observe(form);
+})();
+
+/* RUM: CWV beacon (LCP/CLS/INP) to same-origin /cdn-cgi/rum (hook in Worker later) */
+(function () {
+  try {
+    if (!('PerformanceObserver' in window)) return;
+    var m = { lcp: 0, cls: 0, inp: 0, u: location.pathname };
+    new PerformanceObserver(function (l) { var e = l.getEntries(); if (e.length) m.lcp = Math.round(e[e.length - 1].startTime); }).observe({ type: 'largest-contentful-paint', buffered: true });
+    new PerformanceObserver(function (l) { l.getEntries().forEach(function (e) { if (!e.hadRecentInput) m.cls += e.value; }); }).observe({ type: 'layout-shift', buffered: true });
+    new PerformanceObserver(function (l) { l.getEntries().forEach(function (e) { m.inp = Math.max(m.inp, Math.round(e.duration)); }); }).observe({ type: 'event', buffered: true });
+    window.__cwv = m;
+    addEventListener('pagehide', function () {
+      m.cls = Math.round(m.cls * 1000) / 1000;
+      try { if (navigator.sendBeacon) navigator.sendBeacon('/cdn-cgi/rum', JSON.stringify(m)); } catch (e) {}
+    });
+  } catch (e) {}
 })();

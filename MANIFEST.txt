@@ -1,7 +1,7 @@
-MOBILE P0/P1 FIX ROUND — 2026-10-10 (31 files)
-Fixes: article h-scroll 6px->0 (guide-cover clamp) | tap targets: burger 40->48, mobile TOC summary 21->45, TOC links 41->45
-| font floor: text-[9px]->11px, text-[10px]->12px site-wide | mobile panel: 12 DISCO chips (44px)
-| sticky mobile "Check Bill" bar (hubs/home->checker, blog->home, articles->own DISCO hub; auto-hides while checker visible)
-| input: enterkeyhint=go, autocomplete=off, pattern=[0-9]*
-Unchanged: _headers (no inline-script change, sha 8fda58ae526affce) — do NOT re-upload.
-Verified: static audit 0/0/0 + Android emulation (390x844): hScroll 0, no font <11px visible, chips 12x44px, sticky hide/show OK, checker 14-digit input OK, 0 console errors.
+P2 ROUND — 2026-10-10 (34 files)
+1) Canvas hero animation mobile par OFF (decorative; rAF loop skipped <768px) — CPU win on low-end phones.
+2) RUM beacon: LCP/CLS/INP collect hoke same-origin /cdn-cgi/rum par sendBeacon (Worker side hook baad mein; 404 harmless). window.__cwv exposed.
+3) theme-color meta: 19 pages par added, 13 pages #ecfdf5 -> #059669 (brand green address bar).
+4) content-visibility:auto TRIED + REVERTED — measured: TOC anchor jump 2750px off (Chrome skipped-content estimation). Anchor accuracy > render skip. Do NOT re-add without JS scroll fix.
+Unchanged: _headers (sha 8fda58ae526affce), styles css/article css net-zero vs mobile-fixes ZIP.
+UPLOAD ORDER: gepco ZIP -> mobile-fixes ZIP -> yeh P2 ZIP (last).
