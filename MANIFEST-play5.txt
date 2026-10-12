@@ -1,0 +1,9 @@
+Play 5 — linkable: NEPRA tariff explainer (2026-10-12)
+
+blog/nepra-tariff-explained/index.html   new pillar (2469 words, 3 slab tables, 7 FAQs, BlogPosting+FAQPage+BreadcrumbList)
+images/nepra-tariff-explained-v1{,-800,-400}.webp   cover 1200/800/400
+blog/index.html                          27th card
+sitemap.xml                              42 URLs (priority 0.9)
+_headers                                 new /blog/nepra-tariff-explained/ CSP route (44 routes/64 rules)
+
+After upload: verify page live + source has FAQPage, then flip CSV row 78 Planned -> Live. Outreach kit: 05_audits/PLAY5-OUTREACH-KIT-2026-10-12.md (user-driven).
