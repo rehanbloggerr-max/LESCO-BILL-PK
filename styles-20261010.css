@@ -175,3 +175,7 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
 .bb-seo-copy details p{padding:0 14px 12px}
 
 @media(max-width:1023px){section#top .mx-auto.grid{grid-template-columns:minmax(0,1fr)}}
+
+@media(max-width:420px){#calculator .flex{flex-wrap:wrap}}
+
+body{overflow-wrap:break-word}
