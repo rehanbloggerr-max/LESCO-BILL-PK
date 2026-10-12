@@ -1,0 +1,18 @@
+Play 4 — internal-link anchors + breadcrumb schema (2026-10-12)
+
+index.html                home: dropdown/mobile-chips/footer anchors -> 'X bill' + real hub hrefs (footer was #top); new hero 12-link nav (exact-match anchors)
+disco/lesco/index.html  BreadcrumbList JSON-LD added
+disco/iesco/index.html  BreadcrumbList JSON-LD added
+disco/gepco/index.html  BreadcrumbList JSON-LD added
+disco/fesco/index.html  BreadcrumbList JSON-LD added
+disco/mepco/index.html  BreadcrumbList JSON-LD added
+disco/pesco/index.html  BreadcrumbList JSON-LD added
+disco/hesco/index.html  BreadcrumbList JSON-LD added
+disco/sepco/index.html  BreadcrumbList JSON-LD added
+disco/qesco/index.html  BreadcrumbList JSON-LD added
+disco/tesco/index.html  BreadcrumbList JSON-LD added
+disco/hazeco/index.html  BreadcrumbList JSON-LD added
+disco/k-electric/index.html  BreadcrumbList JSON-LD added
+_headers                  per-hub /disco/<slug>/ CSP rules (replaces /disco/* union; BreadcrumbList pushed union past the 2000-char line limit)
+
+After upload: verify /disco/lesco/ source has BreadcrumbList, home hero shows 12-link row, then flip CSV rows 1 + 12-23.
