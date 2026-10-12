@@ -1,12 +1,15 @@
-PLAY 2 — PESCO DUPLICATE BILL ARTICLE #31 (2026-10-12)
-New: /blog/pesco-duplicate-bill/ (5,536 words) — locked duplicate-bill template:
-hero + quick-facts card, TOC, 20 sections, 7 FAQs (text-exact FAQPage JSON-LD),
-BlogPosting + Breadcrumb schema, cover webp 1200/800/400, sticky /disco/pesco/ CTA.
-Facts verified: 8 districts (Peshawar, Charsadda, Nowshera, Mardan, Swabi, Kohat,
-Bannu, Dera Ismail Khan; Hazara -> HAZECO 2023), 14-digit ref + 10-digit consumer,
-PITC portal, 118/CCMS.
-Updated: disco/pesco hub seo-copy now links the new guide; blog index card;
-sitemap 33 URLs; _headers regenerated (44 rules; new /blog/pesco-duplicate-bill/ rule).
-Checks: static audit OK (0 broken links, schema text-exact); runtime 390px PASS
-(no overflow, 7 FAQs, TOC anchor lands, 0 console errors).
-Upload all files at same relative paths. CSP: _headers included LAST as usual.
+PLAY 2 — CLUSTER ARTICLES 32-37 (2026-10-12)
+6 new duplicate-bill guides (~5,500 words each), locked template + battery:
+  /blog/hesco-duplicate-bill/   Hyderabad lower-Sindh (7 districts)
+  /blog/sepco-duplicate-bill/   Sukkur upper-Sindh (8 districts)
+  /blog/qesco-duplicate-bill/   Quetta Balochistan belt
+  /blog/tesco-duplicate-bill/   merged tribal districts (7 agencies)
+  /blog/hazeco-duplicate-bill/  Hazara Division (8 districts; PESCO split 2023)
+  /blog/k-electric-duplicate-bill/  Karachi: 13-digit account number, ke.com.pk
+Each: 20 sections, 7 FAQs text-exact FAQPage + BlogPosting + Breadcrumb JSON-LD,
+cover webp 1200/800/400, sticky hub CTA, verified district/number facts.
+Updated: 6 hub seo-copy pd links -> new guides; blog index +6 cards; sitemap 39 URLs;
+_headers regenerated (50 rules, 0 problems; 6 new article CSP routes).
+Checks: static audit ALL OK (0 broken links, schema text-exact); runtime 390px ALL PASS
+(no overflow, 7 FAQs, covers load, 0 console errors).
+Upload at same relative paths; _headers LAST as usual.
