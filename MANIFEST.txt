@@ -1,17 +1,12 @@
-FIX v2: mobile right-edge distortion + 320px hardening — home + all hubs (2026-10-12)
-Root cause (v1): hero section#top grid had NO mobile grid-template-columns; implicit auto
-track (372px max-content) overflowed the content box -> right padding eaten / clip.
-v2 adds two more real <=360px overflows found in live battery:
-  1) #calculator card inner flex rows (min-content 307px) didn't wrap -> card 357px wide
-  2) long inline tokens (<b>bill.pitc.com.pk</b> etc.) overflowed at 320px
-Rules appended to styles-20261010.css (end of file):
-  @media(max-width:1023px){section#top .mx-auto.grid{grid-template-columns:minmax(0,1fr)}}
-  @media(max-width:420px){#calculator .flex{flex-wrap:wrap}}
-  body{overflow-wrap:break-word}
-Files in this ZIP (upload at site root, overwrite):
-  styles-20261010.css
-Verified locally (headless Chrome 131, mobile emulation): home + lesco + k-electric + gepco
-hubs x widths 320/360/390/412 -> max uncontained right edge == clientWidth (ALL PASS);
-desktop 1600 hero two columns (gtc 580px 620px); 0 console errors.
-CSP: unchanged - no inline scripts or page HTML modified.
-NOTE: v1 (sha 87ee7359f0c4feb5) already live; this v2 supersedes it - single overwrite.
+PLAY 2 — PESCO DUPLICATE BILL ARTICLE #31 (2026-10-12)
+New: /blog/pesco-duplicate-bill/ (5,536 words) — locked duplicate-bill template:
+hero + quick-facts card, TOC, 20 sections, 7 FAQs (text-exact FAQPage JSON-LD),
+BlogPosting + Breadcrumb schema, cover webp 1200/800/400, sticky /disco/pesco/ CTA.
+Facts verified: 8 districts (Peshawar, Charsadda, Nowshera, Mardan, Swabi, Kohat,
+Bannu, Dera Ismail Khan; Hazara -> HAZECO 2023), 14-digit ref + 10-digit consumer,
+PITC portal, 118/CCMS.
+Updated: disco/pesco hub seo-copy now links the new guide; blog index card;
+sitemap 33 URLs; _headers regenerated (44 rules; new /blog/pesco-duplicate-bill/ rule).
+Checks: static audit OK (0 broken links, schema text-exact); runtime 390px PASS
+(no overflow, 7 FAQs, TOC anchor lands, 0 console errors).
+Upload all files at same relative paths. CSP: _headers included LAST as usual.
