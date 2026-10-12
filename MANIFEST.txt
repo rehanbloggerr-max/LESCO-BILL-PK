@@ -1,9 +1,14 @@
-PLAY 1 — HUB SEO TEXT BLOCKS — 2026-10-10 (14 files)
-Har 12 hub par indexable section#seo-copy (262-354 words each, 3,407 total):
-- H2 "<NAME> bill online: what it shows and how to pay it" (head keyword "<x> bill" coverage)
-- h3s: service areas (verified districts) / numbers on the bill (14-digit ref + 10-digit consumer; KE 13-digit) / paying + records
-- duplicate-bill article link jahan article live hai (5), warna reference-number/not-received guide
-- 3 unique FAQs per hub + FAQPage JSON-LD (text-exact)
-Checker above-the-fold intact (formY ~170px) | 0 console errors | static audit 0/0/0
-_headers regenerated: /disco/* wildcard ab 25 inline hashes (union) — include LAST in upload.
-UPLOAD ORDER ab: gepco -> mobile-fixes -> p2 -> play1-hub-seo (last).
+FIX: mobile right-edge distortion — home + all hubs (2026-10-10)
+Root cause: hero section#top grid had NO mobile grid-template-columns; the implicit
+auto track sized to max-content (372px) and overflowed the 350px content box at <=390px
+viewports, eating the right padding and clipping content at the right edge.
+(Existed since the Oct-8 static redesign; NOT caused by the mobile-round HTML edits —
+each was bisected out and the overflow persisted.)
+Fix appended to styles-20261010.css:
+  @media(max-width:1023px){section#top .mx-auto.grid{grid-template-columns:minmax(0,1fr)}}
+Files in this ZIP (upload at site root):
+  styles-20261010.css
+Verified locally (puppeteer mobile emulation): home + lesco + k-electric + gepco hubs,
+widths 320/360/390/412: max in-flow right edge <= clientWidth at every size;
+desktop 1280 hero still two columns (gtc 540px 620px); 0 console errors.
+CSP: unchanged — no inline scripts or page HTML were modified by this fix.
