@@ -1,15 +1,16 @@
-PLAY 2 — CLUSTER ARTICLES 32-37 (2026-10-12)
-6 new duplicate-bill guides (~5,500 words each), locked template + battery:
-  /blog/hesco-duplicate-bill/   Hyderabad lower-Sindh (7 districts)
-  /blog/sepco-duplicate-bill/   Sukkur upper-Sindh (8 districts)
-  /blog/qesco-duplicate-bill/   Quetta Balochistan belt
-  /blog/tesco-duplicate-bill/   merged tribal districts (7 agencies)
-  /blog/hazeco-duplicate-bill/  Hazara Division (8 districts; PESCO split 2023)
-  /blog/k-electric-duplicate-bill/  Karachi: 13-digit account number, ke.com.pk
-Each: 20 sections, 7 FAQs text-exact FAQPage + BlogPosting + Breadcrumb JSON-LD,
-cover webp 1200/800/400, sticky hub CTA, verified district/number facts.
-Updated: 6 hub seo-copy pd links -> new guides; blog index +6 cards; sitemap 39 URLs;
-_headers regenerated (50 rules, 0 problems; 6 new article CSP routes).
-Checks: static audit ALL OK (0 broken links, schema text-exact); runtime 390px ALL PASS
-(no overflow, 7 FAQs, covers load, 0 console errors).
-Upload at same relative paths; _headers LAST as usual.
+PLAY 2 FINAL — PILLARS 24/25 + LESCO/FESCO RE-CUT (2026-10-12)
+NEW PILLARS (locked chrome, pillar sections):
+  /blog/electricity-bill-check-online-pakistan/ (3,385 words)
+    12-company index table (region + number format + hub + duplicate guide per row),
+    3 number formats, 5-step universal check, universal fixes, safety, 7 FAQs.
+  /blog/k-electric-bill/ (2,797 words)
+    KE bill anatomy (account block / peak-off-peak / due date), 13 vs 14 digits,
+    ke.com.pk route, payment, recovery, 7 FAQs.
+RE-CUT onto locked template (same URLs, original datePublished kept, modified 2026-10-12):
+  /blog/lesco-duplicate-bill/  (was pre-lock: 7.3k words/6 FAQs -> 5.5k/7/19 sections)
+  /blog/fesco-duplicate-bill/  (same; self-related card replaced)
+WIRING: blog index +2 pillar cards (26 total), sitemap 41 URLs (lastmod bumped for recuts),
+_headers regenerated (52 rules, 0 problems; 2 stale hashes dropped, 4 new).
+CHECKS: static OK (schema text-exact, 0 broken links); runtime 390px ALL 4 PASS
+(no overflow, 7 FAQs, covers, 0 console errors).
+Upload at same relative paths; _headers LAST.
