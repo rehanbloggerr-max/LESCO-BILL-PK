@@ -1,0 +1,21 @@
+Keyword placement round (2026-10-13) — Keyword Surfer CSV, 108 keywords / 20.9M volume
+
+Source keyword file: uploads/keyword-surfer-collection.csv (120 lines)
+Plan: 05_audits/KEYWORD-PLACEMENT-PLAN-2026-10-13.md
+Script: 07_tools/kw-placement.py
+
+12 DISCO hubs (disco/<slug>/index.html):
+  - title: '<NAME> Bill Check Online - <NAME> Online Bill & Duplicate'
+  - meta description + og/twitter rewritten with 'online bill check by 14-digit reference number, duplicate bill, e-bill, PDF print'
+  - seo-copy: new h3 'How to check your <NAME> bill online' + paragraph (company + city/region terms)
+  - FAQs 3 -> 5, each pair picked from that company's high-volume long-tails
+  - FAQPage JSON-LD regenerated text-exact with the 5 visible FAQs
+index.html (home):
+  - title: 'Check Bill Online - Electricity Bill, All 12 DISCOs | BijleeBill.pk'
+  - description + og retargeted at generic terms (check bill online 673K / bill check online 550K)
+  - footer generic sentence added
+blog/electricity-bill-check-online-pakistan/index.html:
+  - one sentence in overview targeting 'bill check online' / 'online bill check'
+_headers: regenerated - 44 routes / 64 rules, per-hub CSP hashes rotated, problems none
+
+Verify after upload: /disco/lesco/ title + 5 FAQs, home title, then flip CSV lastmod rows already set to 2026-10-13.
