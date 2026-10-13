@@ -1,0 +1,8 @@
+Dropdown reveal animation (2026-10-13) — supersedes hover-dropdown-2026-10-13.zip
+
+assets/bb-static-app-v3.js   NEW: dropdown open/close animated (fade + 8px rise + subtle scale, .18-.2s ease-out); close waits 200ms fade-out before display:none; rAF race fixed (fast outside-click can't leave it stuck open); prefers-reduced-motion respected. Styles injected by JS (no CSS file version bump needed).
+blog/article-20261014.js     NEW: same animation for sub-page dropdowns.
+
+42 pages: ref swap v2->v3 / 20261013->20261014. bb-header-v2.js UNCHANGED (still referenced). v2 files kept for cached-HTML safety.
+
+Battery: anim suite 4/4 (opacity ramp verified mid-transition), hover suite 8/8, mobile tap 2/2, kw battery 13/13, articles 5/5, 0 console errors.
