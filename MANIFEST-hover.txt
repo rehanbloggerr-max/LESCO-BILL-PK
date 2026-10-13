@@ -1,0 +1,14 @@
+Hover dropdown round (2026-10-13)
+
+assets/bb-static-app-v2.js     NEW (home+hubs): DISCOs dropdown opens on mouse hover (desktop fine-pointer only), 250ms close delay; click/touch behavior unchanged
+assets/bb-header-v2.js         NEW: dropdown block REMOVED (article js is single controller now); scroll/burger logic unchanged
+blog/article-20261013.js       NEW: shared sub-page js + DISCOs dropdown controller (hover + click + Escape + outside-click)
+
+HTML changes:
+- 18 sub-pages (blog posts, blog index, 4 legal): plain DISCOs nav link replaced with the 12-company hover dropdown (exact-match anchors, absolute /disco/ hrefs)
+- 29 pages: article-20261005.js -> article-20261013.js ref swap
+- home + 12 hubs: bb-static-app-v1.js -> v2 ref swap (11 pages bb-header-v1 -> v2)
+- old v1 asset files intentionally kept (cached HTML safety); safe to delete later
+
+CSP unchanged (external scripts, no inline hash changes). _headers NOT in this package.
+Battery: hover suite 8/8 PASS (home/hub/blog/legal/index/calc + mobile tap x2); kw battery 13/13; articles 5/5.
