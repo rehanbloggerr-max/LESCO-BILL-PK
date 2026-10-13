@@ -1,0 +1,8 @@
+DISCOs button font-pattern match (2026-10-13) — supersedes hover-dropdown-anim-2026-10-13.zip
+
+assets/bb-static-app-v4.js   NEW: injected style now also sets button font-family:inherit, 14px, weight 600 (same as How it works/Blog/FAQ/Calculator links) + hover colour #047857 on #ecfdf5, matching nav link hover. Animation + hover behavior unchanged.
+blog/article-20261015.js     NEW: same for sub-page dropdowns.
+
+42 pages: ref swap v3->v4 / 20261014->20261015 (no other markup change).
+
+Battery: font-parity 4/4 (family/size/weight/color vs sibling nav links + hover rgb verified on home/hub/blog/legal), hover 8/8 x2 runs, anim 4/4, mobile 2/2, kw 13/13, articles 5/5, 0 console errors.
