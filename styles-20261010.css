@@ -179,3 +179,17 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
 @media(max-width:420px){#calculator .flex{flex-wrap:wrap}}
 
 body{overflow-wrap:break-word}
+
+/* ------------------------------------------------------------------
+   Mobile horizontal-overflow guard.
+   `body{overflow-x:hidden}` alone is ignored by iOS Safari when <html>
+   is `overflow-x:visible`, which lets the page scroll sideways on a
+   real handset while desktop devtools looks perfectly clean.
+   `clip` is used instead of `hidden` because `hidden` on <html> would
+   turn it into a scroll container and break the sticky header
+   (.bb-static-header). `clip` does not create a scroll container.
+   ------------------------------------------------------------------ */
+html{overflow-x:clip}
+@supports not (overflow-x:clip){
+  html{overflow-x:hidden}
+}

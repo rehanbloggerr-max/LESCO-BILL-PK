@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile overflow diagnostic</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; padding:14px; font-family: system-ui, sans-serif;
+         background:#0b261c; color:#d7f2e6; font-size:14px; line-height:1.6; }
+  h1 { font-size:17px; margin:0 0 4px; color:#fff; }
+  .sub { font-size:12px; color:#7fbfa4; margin:0 0 14px; }
+  .box { background:#12352a; border:1px solid #1f5e49; border-radius:14px;
+         padding:12px 13px; margin-bottom:12px; }
+  .k { color:#8fd9bd; font-weight:700; }
+  .big { font-size:22px; font-weight:900; color:#fff; }
+  .warn { color:#ffd166; font-weight:800; }
+  .bad { color:#ff8f8f; font-weight:800; }
+  .good { color:#6ee7b7; font-weight:800; }
+  code { background:#0a2019; padding:1px 5px; border-radius:5px;
+         font-size:12px; color:#a7f3d0; word-break:break-all; }
+  ul { margin:8px 0 0; padding-left:16px; }
+  li { margin-bottom:7px; font-size:12.5px; }
+  button { width:100%; padding:13px; border:0; border-radius:12px;
+           background:#10b981; color:#04231a; font-weight:900; font-size:15px;
+           margin-bottom:12px; }
+  button:active { background:#059669; }
+  .hl { outline:3px solid #ff4d4d !important; outline-offset:-1px;
+        background:rgba(255,77,77,.18) !important; }
+  table { width:100%; border-collapse:collapse; font-size:12px; margin-top:6px; }
+  td { padding:4px 5px; border-bottom:1px solid #1f5e49; vertical-align:top; }
+</style>
+</head>
+<body>
+
+<h1>Mobile overflow diagnostic</h1>
+<p class="sub">Ye page batayega ke kaunsa element screen se bahar ja raha hai.</p>
+
+<div class="box">
+  <div><span class="k">Viewport width:</span> <span class="big" id="vw">–</span> px</div>
+  <div><span class="k">Device pixel ratio:</span> <span id="dpr">–</span></div>
+  <div><span class="k">Document scrollWidth:</span> <span id="dsw">–</span></div>
+  <div><span class="k">Body overflow-x:</span> <span id="bov">–</span></div>
+  <div><span class="k">HTML overflow-x:</span> <span id="hov">–</span></div>
+  <div><span class="k">Root font-size:</span> <span id="rfs">–</span></div>
+</div>
+
+<div class="box">
+  <div><span class="k">Horizontal scroll test:</span> <span id="scroll" class="big">–</span></div>
+  <div style="font-size:12px;color:#7fbfa4;margin-top:4px">
+    Agar yahan 0 se zyada number aaye to page right ko scroll ho raha hai —
+    yahi wajah hai ke right margin nazar nahi aata.
+  </div>
+</div>
+
+<button onclick="run()">SCAN KAREIN (dabayein)</button>
+
+<div class="box" id="result">
+  <div style="color:#7fbfa4">Upar button dabayein.</div>
+</div>
+
+<div class="box">
+  <div class="k">Browser:</div>
+  <div style="font-size:11px;word-break:break-all;color:#9fd9c2" id="ua"></div>
+</div>
+
+<script>
+function info(id, v){ document.getElementById(id).textContent = v; }
+info('vw', window.innerWidth);
+info('dpr', window.devicePixelRatio);
+info('dsw', document.documentElement.scrollWidth);
+info('bov', getComputedStyle(document.body).overflowX);
+info('hov', getComputedStyle(document.documentElement).overflowX);
+info('rfs', getComputedStyle(document.documentElement).fontSize);
+info('ua', navigator.userAgent);
+
+// scroll test
+window.scrollTo(9999, 0);
+var mx = window.scrollX;
+window.scrollTo(0, 0);
+var el = document.getElementById('scroll');
+el.textContent = mx + ' px';
+el.className = mx > 0 ? 'big bad' : 'big good';
+
+function run(){
+  var vw = window.innerWidth, out = [], n = 0;
+  document.querySelectorAll('*').forEach(function(e){
+    var b = e.getBoundingClientRect();
+    if (b.width === 0 || b.height === 0) return;
+    if (b.right > vw + 1 || b.left < -1) {
+      n++;
+      e.classList.add('hl');
+      if (out.length < 14) {
+        var cs = getComputedStyle(e);
+        out.push({
+          tag: e.tagName.toLowerCase(),
+          cls: (e.className && e.className.toString ? e.className.toString() : '').slice(0, 46),
+          L: Math.round(b.left), R: Math.round(b.right),
+          W: Math.round(b.width),
+          over: Math.round(b.right - vw),
+          pos: cs.position
+        });
+      }
+    }
+  });
+  var h = '';
+  if (n === 0) {
+    h = '<div class="good">✅ Koi element screen se bahar nahi. Masla kuch aur hai.</div>';
+  } else {
+    h = '<div class="bad">' + n + ' elements screen se bahar hain.</div>'
+      + '<div style="font-size:12px;color:#7fbfa4;margin:6px 0">'
+      + 'Neeche wale red outline ke sath highlight hue hain. Page scroll kar ke dekhein.</div>'
+      + '<table><tr><td style="color:#8fd9bd">TAG</td><td style="color:#8fd9bd">OVER</td><td style="color:#8fd9bd">L/R/W</td></tr>';
+    out.forEach(function(o){
+      h += '<tr><td><code>' + o.tag + '</code><br><span style="font-size:10px">' + o.cls
+         + '</span><br><span style="font-size:10px;color:#7fbfa4">pos:' + o.pos + '</span></td>'
+         + '<td class="bad">+' + o.over + '</td>'
+         + '<td>' + o.L + ' / ' + o.R + ' / ' + o.W + '</td></tr>';
+    });
+    h += '</table>';
+  }
+  document.getElementById('result').innerHTML = h;
+}
+</script>
+</body>
+</html>
