@@ -446,9 +446,9 @@
     if (p) {
       if (disco) {
         var host = disco.portal === 'ke' ? 'ke.com.pk' : 'bill.pitc.com.pk';
-        p.innerHTML = '<b class="font-bold text-slate-900">' + disco.name + '</b> selected \u2014 enter your number on the right and a new tab opens straight to your bill on <b class="font-semibold text-slate-900">' + host + '</b>.';
+        p.innerHTML = '<b class="font-bold text-slate-900">' + disco.name + '</b> selected. Enter your number on the right and a new tab opens straight to your bill on <b class="font-semibold text-slate-900">' + host + '</b>.';
       } else if (!p.getAttribute('data-bb-default')) {
-        p.innerHTML = 'Select your DISCO and reference number \u2014 a new tab opens straight to your bill on the official PITC portal (you\u2019ll see <b class="font-semibold text-slate-900">bill.pitc.com.pk</b> in the address bar). No signup \u2014 saved numbers stay in your browser only.';
+        p.innerHTML = 'Select your DISCO and reference number. A new tab opens straight to your bill on the official PITC portal (you\u2019ll see <b class="font-semibold text-slate-900">bill.pitc.com.pk</b> in the address bar). No signup. Saved numbers stay in your browser only.';
         p.setAttribute('data-bb-default', '1');
       }
     }
