@@ -738,14 +738,6 @@ box-shadow:0 14px 30px rgba(4,120,87,.32);transform:translateY(-2px)}
 @media(prefers-reduced-motion:reduce){.bb-totop{transition:opacity .2s ease}}
 </style>
 <button type="button" class="bb-totop" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-<script>(function(){var b=document.querySelector('.bb-totop');if(!b)return;var shown=false;
-function upd(){var y=window.pageYOffset||document.documentElement.scrollTop||0;
-var s=y>420;if(s!==shown){shown=s;b.classList.toggle('show',s);}}
-b.addEventListener('click',function(){var red=false;try{red=window.matchMedia('(prefers-reduced-motion:reduce)').matches;}catch(e){}
-try{window.scrollTo({top:0,behavior:red?'auto':'smooth'});}catch(e){window.scrollTo(0,0);}
-b.blur();});
-window.addEventListener('scroll',upd,{passive:true});
-window.addEventListener('resize',upd,{passive:true});
-upd();})();</script>
+<script src="/assets/bb-totop.js" defer></script>
 </body>
 </html>
