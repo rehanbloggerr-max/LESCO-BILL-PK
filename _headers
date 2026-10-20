@@ -149,6 +149,9 @@
 /blog/protected-unprotected-consumer-pakistan/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
+/blog/meter-rent-electricity-bill/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
 /about/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-UGrrLAPmcSEc6EZCmk9JIv3S2qpRYCOrWy2Lf0t2MXY='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
