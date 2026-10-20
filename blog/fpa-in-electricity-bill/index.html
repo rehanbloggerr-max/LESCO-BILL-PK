@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#059669"/>
+  <title>FPA in an electricity bill: what it is and how it is set</title>
+  <meta name="description" content="Fuel Price Adjustment explained with the official Ministry of Energy definition, the current NEPRA notified rate, who is exempt, and why your amount differs from a neighbour's.">
+  <link rel="canonical" href="https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BijleeBill.pk">
+  <meta property="og:title" content="FPA in an electricity bill: what it is and how it is set">
+  <meta property="og:description" content="Fuel Price Adjustment explained with the official Ministry of Energy definition, the current NEPRA notified rate, who is exempt, and why your amount differs from a neighbour's.">
+  <meta property="og:url" content="https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/">
+  <meta property="og:image" content="https://lesco-bill-pk.rehanbloggerr.workers.dev/images/fpa-in-electricity-bill-v1.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <link rel="preload" href="/fonts/plus-jakarta-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/outfit-latin-var.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/fonts/jetbrains-mono-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../article-20261016.css">
+  <style>
+    .guide-cover{overflow:hidden;margin:0 0 22px;border:1px solid var(--line);border-radius:34px;background:#fff;box-shadow:0 18px 45px rgba(7,26,20,.09)}
+    .guide-cover img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover}
+    .table-wrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;border:1px solid #dcebe4;border-radius:22px;background:#fff;box-shadow:0 12px 30px rgba(6,30,22,.06)}
+    .table-wrap:focus-visible{outline:3px solid #10b981;outline-offset:2px}
+    .guide-table{width:100%;min-width:660px;border-collapse:separate;border-spacing:0;line-height:1.6}
+    .guide-table th{padding:14px 16px;text-align:left;color:#073b2b;background:#eafbf3;border-bottom:1px solid #d7ebdf;font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-size:.93rem;letter-spacing:-.01em}
+    .guide-table td{padding:13px 16px;color:#4f635d;border-bottom:1px solid #edf6f1;vertical-align:top;font-size:.95rem}
+    .guide-table tbody tr:last-child td{border-bottom:0}
+    .guide-table tbody tr:hover td{background:#fbfefd}
+    .check-list{list-style:none;padding:0!important;display:grid;gap:11px}
+    .check-list li{display:flex;align-items:flex-start;gap:12px;margin:0!important;padding:13px 14px;border:1px solid #dcebe4;border-radius:18px;background:linear-gradient(180deg,#fff,#fbfefd);color:#4f635d;line-height:1.65}
+    .check-box{flex:0 0 auto;width:21px;height:21px;margin-top:2px;border:2px solid var(--emerald-2);border-radius:6px;box-shadow:inset 0 0 0 3px #fff;background:#fff}
+    .qa-item{margin:15px 0;border:1px solid #dcebe4;border-radius:20px;background:linear-gradient(180deg,#fff,#fbfefd);overflow:hidden}
+    .qa-item summary{padding:17px 19px;cursor:pointer;color:#0b261c;font-weight:900;line-height:1.45;list-style:none}
+    .qa-item summary::-webkit-details-marker{display:none}
+    .qa-item summary::after{content:"+";float:right;margin-left:12px;color:var(--emerald);font-size:1.25rem;font-weight:900;transition:transform .2s ease}
+    .qa-item[open] summary::after{transform:rotate(45deg)}
+    .qa-answer{padding:0 19px 18px}
+    .qa-answer p:last-child{margin-bottom:0}
+    @media(max-width:720px){.guide-cover{margin-left:-6px;margin-right:-6px;border-radius:24px}.guide-table{min-width:590px}}
+  
+    .author-byline{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:0 0 22px;
+      font-size:.9rem;line-height:1.6;color:#4f635d}
+    .author-byline .author-av{width:30px;height:30px;margin-right:10px;border-radius:50%;
+      flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+      font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-weight:900;font-size:.76rem;
+      letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#047857,#10b981)}
+    .author-byline strong{color:#0b261c;font-weight:800}
+    .author-byline .author-sep{color:#c3d3cd;margin:0 7px}
+    .author-byline .author-date{color:#7d918a}
+    .author-card{display:flex;gap:16px;align-items:flex-start;margin:26px 0 26px;
+      padding:20px 22px;border:1px solid #dcebe4;border-radius:24px;
+      background:linear-gradient(180deg,#fff,#fbfefd);box-shadow:0 12px 30px rgba(6,30,22,.06)}
+    .author-card .author-av{width:50px;height:50px;flex:0 0 auto;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-weight:900;font-size:1.1rem;
+      letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#047857,#10b981)}
+    .author-card .author-nm{font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;
+      font-weight:900;font-size:1.02rem;letter-spacing:-.01em;color:#0b261c;margin:0 0 2px}
+    .author-card .author-rl{font-size:.82rem;color:#7d918a;margin:0 0 9px}
+    .author-card p{margin:0 0 10px;font-size:.89rem;line-height:1.68;color:#4f635d}
+    .author-card .author-more{color:#047857;font-weight:700;text-decoration:none;font-size:.86rem}
+    .author-card .author-more:hover{text-decoration:underline}
+    @media(max-width:720px){.author-card{flex-direction:column;gap:12px}}
+
+    .chart-figure{margin:22px 0;padding:16px 16px 12px;border:1px solid #dcebe4;
+      border-radius:22px;background:linear-gradient(180deg,#fff,#fbfefd);
+      box-shadow:0 12px 30px rgba(6,30,22,.06);overflow-x:auto;max-width:100%;
+      -webkit-overflow-scrolling:touch}
+    .chart-figure:focus-visible{outline:3px solid #10b981;outline-offset:2px}
+    .chart-svg{display:block;width:100%;height:auto}
+    @media(max-width:720px){.chart-figure{margin-left:-6px;margin-right:-6px;
+      border-radius:18px}.chart-svg{min-width:600px}}
+</style>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/#article",
+   "headline": "FPA in an electricity bill: what it is and how it is set",
+   "description": "Fuel Price Adjustment explained with the official Ministry of Energy definition, the current NEPRA notified rate, who is exempt, and why your amount differs from a neighbour's.",
+   "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/",
+   "mainEntityOfPage": {
+    "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/images/fpa-in-electricity-bill-v1.webp",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-10-19",
+   "dateModified": "2026-10-19",
+   "inLanguage": "en-PK",
+   "keywords": "FPA in electricity bill, fuel price adjustment Pakistan, FCA per unit 2026, FPA vs FCA vs QTA, NEPRA fuel charges adjustment, FPA exempt consumers, prepaid FPA zero, electricity bill adjustment Pakistan",
+   "author": {
+    "@type": "Organization",
+    "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/#organization",
+    "name": "BijleeBill.pk",
+    "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/",
+    "description": "Independent bill-checking and tariff research service for Pakistani electricity consumers."
+   },
+   "publisher": {
+    "@type": "Organization",
+    "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev#organization",
+    "name": "BijleeBill.pk",
+    "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "FPA aur FCA mein kya farq hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Koi farq nahi. Yeh ek hi charge ke do naam hain. NEPRA apne notifications mein Fuel Charges Adjustment (FCA) likhta hai, jabke aksar bills aur DISCO software par Fuel Price Adjustment (FPA) chapta hai. Dono ka matlab ek hai, fuel ka reference aur actual cost ke darmiyan ka farq."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is waqt FPA kitna hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "October 2026 ke bills ke liye FPA Rs 1.1086 per unit hai. Yeh August 2026 ke fuel ke liye hai aur S.R.O. 1754(I)/2026 ke tehat 7 October 2026 ko notify hua. Is ke sath QTA Rs 0.5194 per unit bhi chal raha hai. Is tarah kul Rs 1.628 per unit banta hai. Agla rate NEPRA ke agle notification par munhasir hoga."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kya har DISCO ka FPA rate alag hota hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nahi. NEPRA ek hi qaumi rate notify karta hai jo tamam ex-WAPDA DISCOs aur K-Electric par lagoo hota hai. Jo farq nazar aata hai woh units ka hota hai. 500 units istemal karne wale ka FPA 200 units wale se zyada hoga, lekin per unit rate dono ka bilkul ek hai."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Kya FPA ek tax hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nahi. FPA ek cost pass-through hai. Sarkar is se koi aamdani nahi kamati. Yeh woh farq hai jo bijli banane walon ko fuel ka asal mein pada, jo tariff mein lagaaye gaye andaze se zyada ya kam ho. Tax ke baraks, FPA negative bhi ho sakta hai, aur tab yeh aap ke bill se kat-ta hai."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Prepaid meter walon ka FPA kitna hota hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Zero. Har NEPRA FCA notification mein saaf likha hota hai ke prepaid tariff ka intekhab karne wale tamam consumers par yeh adjustment nafiz nahi hoga. Isi tarah lifeline consumers aur electric vehicle charging stations ko bhi chhoot hai."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Mera FPA parosi se zyada kyun hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sab se aam wajah units ka farq hai. FPA rate sab ke liye ek hai, lekin raqam units ke hisaab se lagti hai. Doosri wajoohat mein billing date ka farq shamil hai, kyun ke agar aap ka bill notification se pehle chhap gaya ho to adjustment agle mahine lagta hai."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Negative FPA ka kya matlab hai?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Is ka matlab hai ke us mahine asal fuel cost tariff mein lagaaye gaye andaze se kam thi. Farq aap ko wapas diya jata hai. Bill par yeh bracket mein ya minus ke sath chapta hai, jaise (Rs 93). Yeh aap ka credit hai, koi ghalti nahi. 2026 mein January ke bills par Rs 0.93 per unit ka negative adjustment laga tha."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/#breadcrumb",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://lesco-bill-pk.rehanbloggerr.workers.dev"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Fuel price adjustment",
+     "item": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/fpa-in-electricity-bill/"
+    }
+   ]
+  }
+ ]
+}
+  </script>
+</head>
+
+<body>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+<header class="home-header">
+    <div class="home-header-inner">
+      <a class="home-brand" href="../../" aria-label="BijleeBill.pk home">
+        <span class="home-logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg></span>
+        <span class="home-brand-text">Bijlee<span class="brand-bill">Bill</span><span class="brand-pk">.pk</span></span>
+      </a>
+      <nav class="home-nav" aria-label="Main navigation">
+        <a href="../../#top">Check Bill</a>
+        <div class="bb-disco-dropdown" style="position: relative; display: inline-block;"><button type="button" style="border: 0px; background: transparent; border-radius: 999px; padding: 8px 14px; color: rgb(71, 85, 105); cursor: pointer;">DISCOs ▾</button><div style="display: none; position: absolute; top: 100%; right: 0px; z-index: 100; background: rgb(255, 255, 255); border: 1px solid rgb(219, 231, 225); border-radius: 16px; padding: 8px; min-width: 190px; box-shadow: rgba(6, 78, 59, 0.133) 0px 18px 40px; grid-template-columns: 1fr 1fr; gap: 2px;"><a href="/disco/lesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">LESCO bill</a><a href="/disco/iesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">IESCO bill</a><a href="/disco/gepco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">GEPCO bill</a><a href="/disco/fesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">FESCO bill</a><a href="/disco/mepco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">MEPCO bill</a><a href="/disco/pesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">PESCO bill</a><a href="/disco/hesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">HESCO bill</a><a href="/disco/sepco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">SEPCO bill</a><a href="/disco/qesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">QESCO bill</a><a href="/disco/tesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">TESCO bill</a><a href="/disco/hazeco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">HAZECO bill</a><a href="/disco/k-electric/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">K-Electric bill</a></div></div>
+        <a href="../../#how">How it works</a>
+        <a href="../../#calculator">Calculator<span class="nav-badge">New</span></a>
+        <a href="../" class="active">Blog</a>
+        <a href="../../#faq">FAQ</a>
+      </nav>
+      <div class="home-actions">
+        <a class="home-cta" href="../../#top"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg>Check My Bill</a>
+        <button class="home-burger" type="button" aria-label="Toggle menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </div>
+    <div class="home-mobile-menu" aria-label="Mobile navigation">
+      <a href="../../#top"><span>Check Bill</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../../#discos"><span>DISCOs</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../../#how"><span>How it works</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../../#calculator"><span>Calculator</span><span class="nav-badge">New</span></a>
+      <a href="../" class="active"><span>Blog</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../../#faq"><span>FAQ</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="home-mobile-cta" href="../../#top"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg>Check My Bill</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="article-hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">BijleeBill guide &middot; Adjustments</div>
+          <h1 class="hero-title">FPA on your bill: <span>the line that moves every month</span></h1>
+          <p class="hero-lede">What fuel price adjustment actually is, the official Ministry of Energy definition, the current NEPRA notified rate, and why yours differs from a neighbour's.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="../../#top">Check my bill now</a>
+            <a class="btn btn-ghost" href="#current-fpa">See the current rate</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="FPA quick facts">
+          <span class="hero-tag">Quick answer</span>
+          <h2>One national rate</h2>
+          <p>FPA is not a tax. It is the gap between the fuel cost NEPRA assumed and the fuel cost that was actually incurred.</p>
+          <div class="metric-grid">
+            <div class="metric"><strong>Rs 1.1086</strong><span>October 2026 rate</span></div>
+            <div class="metric"><strong>Rs 0</strong><span>For prepaid meters</span></div>
+            <div class="metric"><strong>2 months</strong><span>Billing lag</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    <div class="shell article-layout">
+      <aside class="toc" aria-label="On this page">
+        <small>On this page</small>
+        <a class="toc-link" href="#overview">Start here</a>
+<a class="toc-link" href="#quick-answer">Quick answer</a>
+<a class="toc-link" href="#what-fpa-is">FPA hai kya</a>
+<a class="toc-link" href="#why-it-exists">Kyun hai</a>
+<a class="toc-link" href="#how-nepra-sets-it">NEPRA kaise tay karta hai</a>
+<a class="toc-link" href="#two-month-lag">Do mahine ki delay</a>
+<a class="toc-link" href="#how-to-calculate">Calculate karein</a>
+<a class="toc-link" href="#current-fpa">Current FPA</a>
+<a class="toc-link" href="#fpa-vs-fca-vs-qta">FPA vs FCA vs QTA</a>
+<a class="toc-link" href="#negative-fpa">Negative FPA</a>
+<a class="toc-link" href="#who-is-exempt">Kaun mustasna</a>
+<a class="toc-link" href="#k-electric">Karachi</a>
+<a class="toc-link" href="#why-yours-differs">Farq kyun</a>
+<a class="toc-link" href="#fpa-is-not-a-tax">Tax nahi hai</a>
+<a class="toc-link" href="#check-on-your-bill">Bill par check</a>
+<a class="toc-link" href="#five-myths">Paanch ghalatfehmiyan</a>
+<a class="toc-link" href="#official-sources">Sources</a>
+<a class="toc-link" href="#final-checklist">Checklist</a>
+<a class="toc-link" href="#faqs">FAQs</a>
+      </aside>
+
+      <div class="on-this-page-mobile">
+        <details>
+          <summary>Jump to a section</summary>
+          <a href="#overview">Start here</a>
+<a href="#quick-answer">Quick answer</a>
+<a href="#what-fpa-is">FPA hai kya</a>
+<a href="#why-it-exists">Kyun hai</a>
+<a href="#how-nepra-sets-it">NEPRA kaise tay karta hai</a>
+<a href="#two-month-lag">Do mahine ki delay</a>
+<a href="#how-to-calculate">Calculate karein</a>
+<a href="#current-fpa">Current FPA</a>
+<a href="#fpa-vs-fca-vs-qta">FPA vs FCA vs QTA</a>
+<a href="#negative-fpa">Negative FPA</a>
+<a href="#who-is-exempt">Kaun mustasna</a>
+<a href="#k-electric">Karachi</a>
+<a href="#why-yours-differs">Farq kyun</a>
+<a href="#fpa-is-not-a-tax">Tax nahi hai</a>
+<a href="#check-on-your-bill">Bill par check</a>
+<a href="#five-myths">Paanch ghalatfehmiyan</a>
+<a href="#official-sources">Sources</a>
+<a href="#final-checklist">Checklist</a>
+<a href="#faqs">FAQs</a>
+        </details>
+      </div>
+
+      <article class="article">
+
+
+        <figure class="guide-cover">
+          <img src="/images/fpa-in-electricity-bill-v1-400.webp" srcset="/images/fpa-in-electricity-bill-v1-400.webp 400w, /images/fpa-in-electricity-bill-v1-800.webp 800w, /images/fpa-in-electricity-bill-v1.webp 1200w" sizes="(max-width: 700px) calc(100vw - 32px), 760px" width="1200" height="630" alt="Illustration of an electricity bill with a magnifying glass over the fuel price adjustment line, a calculator and Pakistani rupee coins, Pakistan theme" loading="eager" decoding="async" fetchpriority="high">
+        </figure>
+    <div class="author-byline">
+      <span class="author-av" aria-hidden="true">BB</span>
+      <span><strong>BijleeBill.pk Team</strong><span class="author-sep">&middot;</span><span class="author-date">Updated 19 October 2026</span></span>
+    </div>
+
+<section class="section" id="overview">
+          <span class="kicker">Start here</span>
+<p>Aap ne is mahina zyada bijli istemal nahi ki. Meter theek tha. Phir bhi bill barh gaya.</p>
+<p>Aksar is ka sabab woh line hai jis par log sab se kam ghaur karte hain. FPA. Fuel Price Adjustment.</p>
+<p>Yeh ek aisi line hai jo har mahina badalti hai, aap ke kuch kiye baghair. Kabhi bill barh jata hai. Kabhi kam ho jata hai.</p>
+<p>Masla yeh hai ke online is ke bare mein aadhi maloomat ghalat hai. Kuch sites har DISCO ke liye alag FPA rate chap deti hain. Kuch FPA aur FCA ko do alag charges batate hain. Kuch kehte hain ke yeh tax hai.</p>
+<p>Yeh teeno baatein sahi nahi hain. Aur isi ghalatfehmi ki wajah se log apne bill ka sahi hisaab nahi laga pate.</p>
+<p>Is guide mein FPA ki poori wazahat hai. Waziratan-e-bijli (Ministry of Energy) ki apni tareef se le kar NEPRA ke notification tak. Sath hi woh cheez bhi jo shayad aap ne kahin nahi parhi. Prepaid consumers ka FPA zero hota hai.</p>
+        </section>
+
+        <section class="section" id="quick-answer">
+          <span class="kicker">Quick answer</span>
+          <h2>FPA in an electricity bill, in four sentences</h2>
+<p>FPA ek adjustment hai jo benzine ki tarah kaam karta hai. Bijli gharon ko chalane wala fuel har mahina mehnga ya sasta hota hai. Us farq ko aap ke bill mein FPA ke zariye adjust kiya jata hai.</p>
+<p>Yeh koi tax nahi hai. Yeh ek hi qaumi rate hai, har DISCO ke liye alag nahi. NEPRA har mahina ek figure notify karta hai aur wohi figure LESCO se le kar K-Electric tak sab par lagta hai.</p>
+<p>FPA aap ke units par lagta hai. Rate × units = FPA ki raqam. Is par GST bhi lagta hai, is liye asar thora barh kar nazar aata hai.</p>
+<p>Agar aap lifeline, EV charging station ya prepaid consumer hain, to aap ka FPA zero hai. Is ki tafseel neeche section 11 mein hai.</p>
+        </section>
+
+        <section class="section" id="what-fpa-is">
+          <span class="kicker">Definition</span>
+          <h2>FPA hai kya cheez?</h2>
+<p>Sab se pehle sarkari tareef dekh lete hain. Ministry of Energy apni website par FPA ko is tarah bayan karta hai.</p>
+<blockquote>Fuel Price Adjustment (FPA) is the difference between actual fuel charges component for a month and reference fuel charges component. In case of positive variation, the fuel price is charged to the consumer through electricity bill and for negative variation the consumer is given benefit of fuel price adjustment as per NEPRA Notification.</blockquote>
+<p>Is ka matlab simple hai. Har saal jo tariff NEPRA notify karta hai, us mein fuel ka ek andaza laga hota hai. Ke bijli banane mein Rs 7 ka fuel lagay ga. Isay kehte hain <strong>reference fuel charges</strong>.</p>
+<p>Lekin asal mein fuel kitna pada? Woh to mahine khatam hone par pata chalta hai. Agar asal fuel cost Rs 8.20 aayi, to reference se Rs 1.20 zyada ho gaya.</p>
+<p>Yeh Rs 1.20 ka farq hi FPA hai. Consumer se wasool kiya jata hai. Aur agar asal cost reference se kam ho, to yeh farq <em>negative</em> ho jata hai aur consumer ko faida milta hai.</p>
+<p>Ghaur ki jiye ke <strong>FPA aur FCA do alag cheezein nahi hain</strong>. Fuel Price Adjustment aur Fuel Charges Adjustment ek hi charge ke do naam hain. NEPRA ke notifications mein aksar FCA likha hota hai. Purane bills aur DISCO ke software mein aksar FPA chapta hai. Dono ka matlab ek hai.</p>
+        </section>
+
+        <section class="section" id="why-it-exists">
+          <span class="kicker">Logic</span>
+          <h2>FPA ka wajood hi kyun hai?</h2>
+<p>Bijli ke ghar (power plants) coal, gas, RLNG ya furnace oil se chaltay hain. In ka fuel market rate par milta hai. Woh har mahina badalta hai. Kabhi RLNG mehnga ho jata hai. Kabhi barish se hydro sasta ho jata hai.</p>
+<p>NEPRA saal mein ek baar tariff notify karta hai. Us waqt woh andaza lagata hai ke fuel ka kitna kharcha aayega. Lekin poore saal ke liye ek hi andaza theek nahi reh sakta.</p>
+<p>Is liye ek structure banaya gaya hai. Reference cost tariff mein pehle se shamil hoti hai. Phir har mahina asal cost ka hisaab hota hai aur farq adjust kiya jata hai.</p>
+<p>Is tarah do faiday hote hain. Consumer ko wohi fuel cost chukani parti hai jo asal mein lagi. Aur DISCO ko bhi apna kharcha recover karne ka raasta milta hai.</p>
+<p>Yeh system sirf Pakistan ka nahi hai. Dunya bhar mein fuel adjustment clauses aam hain. Farq sirf itna hai ke kahin yeh saalana hota hai, kahin mahana.</p>
+        </section>
+
+        <section class="section" id="how-nepra-sets-it">
+          <span class="kicker">Process</span>
+          <h2>NEPRA yeh rate kaise tay karta hai?</h2>
+<p>Har mahina ek chalta hua cycle hai. Isay samajh lena zaroori hai, kyun ke isi se woh do mahine ki delay bhi samajh aati hai.</p>
+<ol class="steps"><li>Mahina khatam hota hai. CPPA-G (Central Power Purchasing Agency) us mahine ke fuel ka asal kharcha jama karta hai.</li><li>CPPA-G NEPRA mein petition daalta hai. Ke actual cost itni thi, reference itni thi, farq itna hai. Is farq ko recover karne ki ijazat di jaye.</li><li>NEPRA public hearing karti hai. Yeh hearing aam taur par agle mahine ke aakhir mein hoti hai.</li><li>NEPRA data ko check karta hai. Aksar woh CPPA-G ke kuch dawe katte hain.</li><li>Phir NEPRA apna decision notify karta hai. Ek S.R.O. number ke sath.</li><li>DISCOs aur K-Electric ko hukum hota hai ke isay agle billing cycle mein alag line ke tor par dikhayein.</li></ol>
+<p>Yahan ek misaal dekh lete hain. August 2026 ke fuel ke liye CPPA-G ne Rs 1.7267 per unit maanga tha. NEPRA ne data check kiya to plant operators ke Rs 17,279 million ke dawe katt gay, jin mein se Rs 15,736 million sirf RLNG plants ke thay.</p>
+<p>Nateeja yeh nikla ke asal fuel cost Rs 8.8265 ke bajaye Rs 8.2084 mani gayi. Aur FPA Rs 1.7267 ke bajaye <strong>Rs 1.1086</strong> approve hua.</p>
+<p>Yani hearing mein jana bekaar nahi jata. Is ek decision se qaumi sathah par lag bhag Rs 16 billion ka farq para.</p>
+        </section>
+
+        <section class="section" id="two-month-lag">
+          <span class="kicker">Timing</span>
+          <h2>Woh do mahine ki delay</h2>
+<p>Sab se aam sawaal yeh hai. August ka fuel, October ke bill par kyun?</p>
+<p>Is ki wajah upar wala cycle hai. Fuel to mahine mein jalta hai. Lekin us ka hisaab lagane, hearing karne aur notification jari karne mein waqt lagta hai.</p>
+<p>August 2026 ke liye yeh silsila kuch yun chala.</p>
+<div aria-label="FPA timeline for August 2026 fuel costs" class="table-wrap" role="region" style="overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch" tabindex="0">
+<table class="guide-table"><thead><tr>
+<th scope="col">Step</th>
+<th scope="col">Date</th>
+<th scope="col">Kya hua</th>
+</tr></thead><tbody>
+<tr><td>Fuel consumption</td><td>August 2026</td><td>Power plants ne fuel jalaya</td></tr>
+<tr><td>CPPA-G petition</td><td>September 2026</td><td>Rs 1.7267 per unit ki darkhwast</td></tr>
+<tr><td>NEPRA hearing</td><td>late September 2026</td><td>Public hearing, data ki jaanch</td></tr>
+<tr><td>NEPRA decision</td><td>7 October 2026</td><td>S.R.O. 1754(I)/2026, Rs 1.1086</td></tr>
+<tr><td>Bill par nazar aaya</td><td>October 2026</td><td>Aap ke October ke bill par</td></tr>
+</tbody></table></div>
+<p>Is liye aap ke bill ki FPA line hamesha us fuel ki hoti hai jo lag bhag do mahine pehle jala tha. Yeh koi ghalti nahi hai. Yeh system ka hissa hai.</p>
+<p>Ek aur nuance bhi hai. Agar koi bill notification se pehle chhap gaya ho, to NEPRA kehti hai ke adjustment agle mahine lagaya ja sakta hai. Is liye kabhi kabhi aap ko October ki bajaye November ke bill mein October wala FPA nazar aata hai.</p>
+<p>September 2026 ke fuel ke liye CPPA-G ne Rs 2.56 per unit ki darkhwast ki hai. Is par hearing 29 October 2026 ko honi hai. Abhi yeh <strong>manzoorshuda nahi</strong>. Jo kuch bhi final ho ga, woh naye S.R.O. ke sath aayega.</p>
+        </section>
+
+        <section class="section" id="how-to-calculate">
+          <span class="kicker">Formula</span>
+          <h2>Apna FPA khud kaise calculate karein</h2>
+<p>Formula itna simple hai ke aap isay mobile ke calculator par kar sakte hain.</p>
+<p><strong>FPA ki raqam = FPA rate × aap ke us mahine ke units</strong></p>
+<p>Bas do cheezein chahiye. Us mahine ka FPA rate, jo NEPRA notify karta hai. Aur aap ke bill par likhe units.</p>
+<p>Ek misaal lete hain. Farz karein aap ke bill par 300 units hain aur us mahine ka FPA Rs 1.1086 hai.</p>
+<p>300 × 1.1086 = <strong>Rs 332.58</strong></p>
+<p>Yeh raqam aap ke bill par FPA ki line mein likhi honi chahiye. Ab alag alag istemal ke liye dekh lete hain.</p>
+<div aria-label="FPA amount by monthly units at Rs 1.1086 per unit" class="table-wrap" role="region" style="overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch" tabindex="0">
+<table class="guide-table"><thead><tr>
+<th scope="col">Monthly units</th>
+<th scope="col">FPA at Rs 1.1086</th>
+<th scope="col">FPA at Rs 2.0581</th>
+</tr></thead><tbody>
+<tr><td>100 units</td><td>Rs 110.86</td><td>Rs 205.81</td></tr>
+<tr><td>200 units</td><td>Rs 221.72</td><td>Rs 411.62</td></tr>
+<tr><td>300 units</td><td>Rs 332.58</td><td>Rs 617.43</td></tr>
+<tr><td>500 units</td><td>Rs 554.30</td><td>Rs 1,029.05</td></tr>
+<tr><td>700 units</td><td>Rs 775.02</td><td>Rs 1,440.67</td></tr>
+</tbody></table></div>
+<p>Ghaur ki jiye ke doosra column September 2026 ka rate hai. Wahi 300 units, lekin farq Rs 332 se Rs 617 tak. Yani same istemal, alag mahina, alag raqam.</p>
+<p>Ek ahem baat. FPA par bhi GST lagta hai. Is liye asli asar table se thora zyada hota hai. Lekin FPA ki line khud GST se pehle aati hai.</p>
+<p>Agar aap apne poore bill ka hisaab lagana chahte hain, to hamari <a href="/blog/1-unit-electricity-price-pakistan/">1 unit ki qeemat</a> wali guide dekhein.</p>
+        </section>
+
+        <section class="section" id="current-fpa">
+          <span class="kicker">Updated</span>
+          <h2>Current FPA — is waqt kitna chal raha hai</h2>
+<p>Yeh block har mahine badalta hai. Neeche woh rate hai jo is waqt nafiz hai. Hum isay har naye NEPRA notification ke baad update karte hain.</p>
+<div aria-label="Current FPA rate" class="table-wrap" role="region" style="overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch" tabindex="0">
+<table class="guide-table"><thead><tr>
+<th scope="col">Item</th>
+<th scope="col">Value</th>
+</tr></thead><tbody>
+<tr><td><strong>Current FPA rate</strong></td><td><strong>Rs 1.1086 per unit</strong></td></tr>
+<tr><td>For fuel month</td><td>August 2026</td></tr>
+<tr><td>Appears on</td><td>October 2026 bills</td></tr>
+<tr><td>Notification</td><td>S.R.O. 1754(I)/2026</td></tr>
+<tr><td>Decision date</td><td>7 October 2026</td></tr>
+<tr><td>Last updated</td><td>19 October 2026</td></tr>
+</tbody></table></div>
+<p>Is ke sath ek aur adjustment bhi chal raha hai. QTA Rs 0.5194 per unit, jo S.R.O. 1501(I)/2026 ke tehat April se June 2026 ki tehmasil ke liye hai. Woh September, October aur November 2026 ke bills mein teen mahino tak banta hua lagta hai.</p>
+<p>Is tarah October 2026 ke bill par dono mil kar <strong>Rs 1.628 per unit</strong> bante hain. 300 units par yeh lag bhag Rs 488 hota hai.</p>
+<p>Agar aap ka bill notification se pehle chhap gaya tha, to yeh November ke bill par nazar aayega.</p>
+        </section>
+
+<figure class="chart-figure">
+<svg class="chart-svg" viewBox="0 0 760 278" xmlns="http://www.w3.org/2000/svg"
+     role="img" aria-labelledby="fpatrend-t fpatrend-d" preserveAspectRatio="xMidYMid meet">
+  <title id="fpatrend-t">FPA per unit through 2026: how much the rate moved</title>
+  <desc id="fpatrend-d">Horizontal bar chart of the notified fuel price adjustment per unit for five consecutive billing months in 2026. The rate ranges from Rs 0.34 in July to Rs 2.0581 in September, then falls to Rs 1.1086 in October.</desc>
+  <style>
+    .c-t{font-family:'Outfit','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:800;fill:#0b261c}
+    .c-l{font-family:'Outfit','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:600;fill:#4f635d}
+    .c-v{font-family:'Outfit','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:800;fill:#047857}
+    .c-m{font-family:'Outfit','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:700;fill:#4f635d}
+    .c-w{font-family:'Outfit','Plus Jakarta Sans',system-ui,-apple-system,sans-serif;font-weight:800;fill:#ffffff}
+  </style>
+  <rect x="0" y="0" width="760" height="278" rx="16" fill="#ffffff" stroke="#dcebe4" stroke-width="1.3"/>
+  <text class="c-t" x="26" y="34" font-size="17">FPA per unit through 2026: how much the rate moved</text>
+  <text class="c-l" x="26" y="83" font-size="12.5">June 2026 bill (Apr fuel)</text>
+  <rect x="210" y="69" width="442" height="19" rx="9.5" fill="#f8faf9"/>
+  <rect x="210" y="69" width="255.6" height="19" rx="9.5" fill="#047857"/>
+  <text class="c-v" x="666" y="84" font-size="13.5">Rs 1.19</text>
+  <text class="c-l" x="26" y="117" font-size="12.5">July 2026 bill (May fuel)</text>
+  <rect x="210" y="103" width="442" height="19" rx="9.5" fill="#f8faf9"/>
+  <rect x="210" y="103" width="73.0" height="19" rx="9.5" fill="#047857"/>
+  <text class="c-v" x="666" y="118" font-size="13.5">Rs 0.34</text>
+  <text class="c-l" x="26" y="151" font-size="12.5">August 2026 bill (Jun fuel)</text>
+  <rect x="210" y="137" width="442" height="19" rx="9.5" fill="#f8faf9"/>
+  <rect x="210" y="137" width="161.1" height="19" rx="9.5" fill="#047857"/>
+  <text class="c-v" x="666" y="152" font-size="13.5">Rs 0.7503</text>
+  <text class="c-l" x="26" y="185" font-size="12.5">September 2026 bill (Jul fuel)</text>
+  <rect x="210" y="171" width="442" height="19" rx="9.5" fill="#f8faf9"/>
+  <rect x="210" y="171" width="442.0" height="19" rx="9.5" fill="#047857"/>
+  <text class="c-v" x="666" y="186" font-size="13.5">Rs 2.0581</text>
+  <text class="c-l" x="26" y="219" font-size="12.5">October 2026 bill (Aug fuel)</text>
+  <rect x="210" y="205" width="442" height="19" rx="9.5" fill="#f8faf9"/>
+  <rect x="210" y="205" width="238.1" height="19" rx="9.5" fill="#047857"/>
+  <text class="c-v" x="666" y="220" font-size="13.5">Rs 1.1086</text>
+  <line x1="210" y1="54" x2="210" y2="228" stroke="#dcebe4" stroke-width="1.2"/>
+</svg>
+
+<figcaption style="padding:10px 4px 2px;font-size:.86rem;line-height:1.6;color:#4f635d">Har bar us mahine ke bill par laga FPA hai, jo do mahine pehle ke fuel ka hota hai. Wohi 300 units: September mein Rs 617, October mein Rs 333.</figcaption>
+</figure>
+
+
+        <section class="section" id="fpa-vs-fca-vs-qta">
+          <span class="kicker">Comparison</span>
+          <h2>FPA vs FCA vs QTA vs FC surcharge</h2>
+<p>Bill par ek se zyada adjustment lines hoti hain. Log inhein aapas mein mix kar dete hain. Yeh chaar alag cheezein hain.</p>
+<div aria-label="FPA compared with FCA, QTA and FC surcharge" class="table-wrap" role="region" style="overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch" tabindex="0">
+<table class="guide-table"><thead><tr>
+<th scope="col">Adjustment</th>
+<th scope="col">Kya hai</th>
+<th scope="col">Kitni baar</th>
+<th scope="col">Is waqt</th>
+</tr></thead><tbody>
+<tr><td><strong>FPA</strong></td><td>Fuel ka farq, reference vs actual</td><td>Har mahina</td><td>Rs 1.1086/unit</td></tr>
+<tr><td><strong>FCA</strong></td><td>FPA hi hai, bas doosra naam</td><td>Har mahina</td><td>Rs 1.1086/unit</td></tr>
+<tr><td><strong>QTA</strong></td><td>Capacity payments, transmission, O&amp;M</td><td>Har 3 mahine</td><td>Rs 0.5194/unit</td></tr>
+<tr><td><strong>FC surcharge</strong></td><td>Financing cost surcharge</td><td>Fixed, tariff ka hissa</td><td>Rs 0.43/unit</td></tr>
+</tbody></table></div>
+<p>Sab se ahem baat. <strong>FPA aur FCA ek hi cheez hain.</strong> NEPRA ke notifications mein Fuel Charges Adjustment likha hota hai. Aap ke bill par aksar FPA chapta hai. Do alag charges ka sochna ghalat hai.</p>
+<p>QTA bilkul alag hai. Yeh quarterly tariff adjustment hai, jis mein fuel nahi balkay capacity payments, variable O&amp;M, transmission (UoSC), market operator fee aur T&amp;D losses par FCA ka asar shamil hota hai. Yeh har 3 mahine baad aata hai aur 3 mahino ke bills mein banta hua lagta hai.</p>
+<p>FC surcharge aam taur par Rs 0.43 per unit hoti hai, lekin kai bills par Rs 3.23 per unit printed nazar aati hai. Farq ki wajah alag alag tareeqon se hisaab lagana hai. Is ki tafseel hamari <a href="/blog/electricity-bill-taxes-pakistan/">taxes wali guide</a> mein hai.</p>
+        </section>
+
+        <section class="section" id="negative-fpa">
+          <span class="kicker">Credit</span>
+          <h2>Negative FPA, jab bill kam ho jaye</h2>
+<p>FPA hamesha barhta nahi hai. Jab asal fuel cost reference se kam ho, to FPA negative ho jata hai. Aur tab yeh charge nahi balkay <strong>credit</strong> ban jata hai.</p>
+<p>2026 mein yeh do baar hua. January ke bills par Rs 0.93 per unit ka negative adjustment laga. March ke bills par Rs 0.01 per unit ka.</p>
+<p>March wala Rs 0.001 dekhne mein chhota hai, lekin isay ghaur se dekhein. Is ka matlab hai ke us mahine fuel ka asal kharcha aur tariff mein laga hua andaza lag bhag barabar thay. System theek kaam kar raha tha.</p>
+<p>Bill par negative FPA aam taur par bracket mein ya minus ke sath chapta hai. Jaise (Rs 93) ya -Rs 93. Ghabrane ki zaroorat nahi. Yeh raqam aap ke bill se <em>kat-ti</em> hai, jarti nahi.</p>
+        </section>
+
+        <section class="section" id="who-is-exempt">
+          <span class="kicker">Exemptions</span>
+          <h2>Kaun FPA se mustasna hai</h2>
+<p>Har NEPRA notification mein ek exemption wali clause hoti hai. 2026 ke notifications mein yeh teen group mustasna hain.</p>
+<ul class="check-list"><li><span class="check-box" aria-hidden="true"></span><span><strong>Lifeline consumers.</strong> Woh gharane jo bohot kam bijli istemal karte hain. Un par FPA lagta hi nahi.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span><strong>Electric vehicle charging stations.</strong> EV charging ke liye bijli istemal karne wale connections par bhi chhoot hai.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span><strong>Prepaid consumers.</strong> Jinho ne prepaid tariff ka intekhab kiya hai. Un ka FPA <strong>zero</strong> hai.</span></li></ul>
+<p>Wazeh rahe ke yeh chhoot har notification mein nazar aati hai. NEPRA har dafa in teeno groups ka naam le kar likhta hai ke FPA un par nafiz nahi hoga.</p>
+<p>Lekin ek group par FPA <em>lagta</em> hai, jis ke bare mein aksar ghalat fehmi hoti hai. Incremental Consumption Package ke tehat istemal kiye gaye units. Notification mein saaf likha hota hai ke adjustment "incremental consumption package" ke units par bhi nafiz hoga.</p>
+        </section>
+
+        <section class="section" id="k-electric">
+          <span class="kicker">Karachi</span>
+          <h2>K-Electric ke consumers ke liye</h2>
+<p>Karachi mein K-Electric apna alag system chalata hai. Lekin FPA ke liye koi alag rate nahi hai.</p>
+<p>Har NEPRA notification mein saaf likha hota hai ke yeh adjustment ex-WAPDA DISCOs <em>aur</em> K-Electric dono ke tamam consumers par nafiz hoga. Wahi rate, wahi mahina, wahi exemptions.</p>
+<p>Is liye October 2026 ke bill par K-Electric ke consumer ka FPA bhi Rs 1.1086 per unit hai. Bil-kul LESCO, IESCO ya MEPCO ki tarah.</p>
+<p>Farq sirf utna hai jo K-Electric ka apna tariff structure paida karta hai. Base rate alag ho sakta hai. Lekin FPA ki <em>line</em> ka rate qaumi hai.</p>
+<p>K-Electric ke bill ki tafseel ke liye hamari <a href="/blog/k-electric-bill/">K-Electric bill guide</a> dekhein.</p>
+        </section>
+
+        <section class="section" id="why-yours-differs">
+          <span class="kicker">Comparison</span>
+          <h2>Aap ka FPA parosi se alag kyun hai</h2>
+<p>Yeh aam ghalatfehmi hai ke har DISCO ka apna FPA rate hota hai. Kuch websites to DISCO ke hisaab se alag alag ranges hi chhap deti hain. LESCO ke liye 2.8 se 4.2, K-Electric ke liye 3.5 se 5.0.</p>
+<p>Yeh theek nahi hai. FPA ek hi qaumi figure hai. Ek hi mahine ke liye, ek hi S.R.O. ke tehat, sab par lagta hai.</p>
+<p>To phir aap ka FPA aap ke parosi se alag kyun nazar aata hai? Is ki chaar wajoohat hain.</p>
+<div aria-label="Why FPA amounts differ between consumers" class="table-wrap" role="region" style="overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch" tabindex="0">
+<table class="guide-table"><thead><tr>
+<th scope="col">Wajah</th>
+<th scope="col">Asar</th>
+</tr></thead><tbody>
+<tr><td><strong>Units ka farq</strong></td><td>Sab se bari wajah. 200 units wale ka FPA 500 units wale se aadha hoga</td></tr>
+<tr><td><strong>Consumer category</strong></td><td>Lifeline, EV aur prepaid zero. Baqi sab par lagta hai</td></tr>
+<tr><td><strong>Billing date</strong></td><td>Bill notification se pehle chhapa ho to agle mahine lagega</td></tr>
+<tr><td><strong>Units billed in that month</strong></td><td>NEPRA kehta hai ke adjustment usi mahine ke units par lagega</td></tr>
+</tbody></table></div>
+<p>Yani aap dono ka <em>rate</em> bilkul ek hai. Farq sirf <em>raqam</em> mein hai, aur woh units ke hisaab se.</p>
+<p>Agar aap ke parosi ka bill aap se zyada hai, to pehle units compare karein. FPA ko blame karne se pehle. Is ki madad ke liye hamari <a href="/blog/why-is-my-bill-so-high/">bill itna zyada kyun hai</a> wali guide dekhein.</p>
+        </section>
+
+        <section class="section" id="fpa-is-not-a-tax">
+          <span class="kicker">Clarity</span>
+          <h2>FPA koi tax nahi hai</h2>
+<p>Bill par FPA ko aksar taxes wale block mein dikhaya jata hai. Is liye log isay tax samajh baithte hain.</p>
+<p>Yeh tax nahi hai. Tax woh hota hai jo sarkar ki aam aamdani ke liye lagaya jaye. Jaise GST, electricity duty ya income tax. In ki tafseel hamari <a href="/blog/electricity-bill-taxes-pakistan/">taxes wali guide</a> mein hai.</p>
+<p>FPA <strong>cost pass-through</strong> hai. Sarkar koi paisa nahi leti. Yeh woh farq hai jo bijli banane walon ko asal mein fuel ka pada. Woh farq consumer se recover kiya jata hai, ya negative hone par consumer ko wapas diya jata hai.</p>
+<p>Is farq ka amali faida yeh hai. Tax ko kam nahi kiya ja sakta. Lekin FPA par asar dala ja sakta hai, kyun ke yeh units ke hisaab se lagta hai. Jitni kam bijli, utna kam FPA.</p>
+        </section>
+
+        <section class="section" id="check-on-your-bill">
+          <span class="kicker">Step by step</span>
+          <h2>Apne bill par FPA kaise check karein</h2>
+<ol class="steps"><li>Apni taaza bill kholein. Chahe kaghaz wali ho ya PITC se download ki hui duplicate bill.</li><li>Energy charge wali line ke neechay dekhein. Wahan FPA ya FCA likha hota hai.</li><li>Jo figure sath likha hai, woh do cheezein batata hai. Rate (per unit) aur total raqam.</li><li>Apne units se rate ko multiply kar ke check karein. Barabar aana chahiye.</li><li>Agar FPA ki line hai hi nahi, to aap lifeline ya prepaid ho sakte hain.</li><li>Agar raqam negative hai, to bracket mein hogi. Woh aap ka credit hai.</li></ol>
+<p>Agar aap ko apni duplicate bill online chahiye, to <a href="/blog/electricity-bill-check-online-pakistan/">online bill check</a> wala tareeqa dekhein.</p>
+        </section>
+
+        <section class="section" id="five-myths">
+          <span class="kicker">Myth-busting</span>
+          <h2>FPA ke bare mein paanch aam ghalatfehmiyan</h2>
+<h3>Ghalatfehmi 1. Har DISCO ka apna FPA rate hota hai</h3>
+<p>Nahi hota. NEPRA ek hi qaumi figure notify karta hai. LESCO ho ya K-Electric, rate ek hai. Jo farq nazar aata hai woh units ka hota hai, rate ka nahi.</p>
+<h3>Ghalatfehmi 2. FPA aur FCA do alag charges hain</h3>
+<p>Nahi. Yeh ek hi adjustment ke do naam hain. NEPRA ke S.R.O. mein aksar Fuel Charges Adjustment likha hota hai. Bills par aksar FPA chapta hai. Dono ek hain.</p>
+<h3>Ghalatfehmi 3. FPA ek tax hai</h3>
+<p>Nahi. Yeh fuel ka farq hai jo pass through kiya jata hai. Tax ki tarah is par sarkar ki aamdani nahi banti. Aur yeh negative bhi ho sakta hai, jo koi tax nahi kar sakta.</p>
+<h3>Ghalatfehmi 4. FPA har mahina barhta hai</h3>
+<p>Nahi. 2026 mein yeh do baar negative hua. January ke bills par Rs 0.93 ka credit mila. Rate har mahine reference aur actual cost ke farq par munhasir hai.</p>
+<h3>Ghalatfehmi 5. Prepaid consumers ko bhi FPA lagta hai</h3>
+<p>Nahi. Har 2026 ke notification mein saaf likha hai ke prepaid tariff walon par FPA nafiz nahi hoga. Un ka FPA zero hai.</p>
+        </section>
+
+        <section class="section" id="official-sources">
+          <span class="kicker">Sources</span>
+          <h2>Sahi maloomat kahan se milti hai</h2>
+<p>FPA ek aisi cheez hai jis par har mahina naye dawe aate hain. Is liye hamesha sarkari zariye se tasdeeq karein.</p>
+<ul class="check-list"><li><span class="check-box" aria-hidden="true"></span><span><strong>Ministry of Energy (power.gov.pk).</strong> FPA ki sarkari tareef aur tax table yahan shaya hoti hai.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span><strong>NEPRA (nepra.org.pk).</strong> Har mahine ka FCA notification S.R.O. number ke sath yahan milta hai.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span><strong>Aap ki apni bill.</strong> Sab se aakhiri sanad. Jo figure bill par likha hai, wahi lagoo hai.</span></li></ul>
+<p>Kisi bhi calculator ya blog ko aakhiri sanad na banayein. Un ke figures purane ho sakte hain. NEPRA ka naya S.R.O. hamesha purane andazon ko mansookh kar deta hai.</p>
+<p>NEPRA kaise kaam karta hai, yeh samajhne ke liye hamari <a href="/blog/nepra-tariff-explained/">NEPRA tariff guide</a> dekhein.</p>
+        </section>
+
+        <section class="section" id="final-checklist">
+          <span class="kicker">Checklist</span>
+          <h2>FPA samajhne ki aakhri checklist</h2>
+<ul class="check-list"><li><span class="check-box" aria-hidden="true"></span><span>FPA fuel ka farq hai, tax nahi. Isay tax wale block mein dekh kar dhoka na khayein.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>FPA aur FCA ek hi cheez hain. Do alag charges nahi.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>Rate ek hi qaumi hai. DISCO ke hisaab se nahi badalta.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>Aap ka FPA aap ke units par munhasir hai. Rate sab ka ek hai.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>Lifeline, EV charging aur prepaid consumers ka FPA zero hai.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>Bill ki line us fuel ki hoti hai jo do mahine pehle jala tha.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>Negative FPA credit hai. Bill kam hota hai, ghabrayein nahi.</span></li>
+<li><span class="check-box" aria-hidden="true"></span><span>Har mahine ka rate naye S.R.O. se tabdeel hota hai. Purane figures purane ho jate hain.</span></li></ul>
+        </section>
+
+        <section class="section" id="faqs">
+          <span class="kicker">FAQs</span>
+          <h2>Aksar poochhe jane wale sawalat</h2>
+<div class="qa-item"><details><summary>FPA aur FCA mein kya farq hai?</summary><div class="qa-answer"><p>Koi farq nahi. Yeh ek hi charge ke do naam hain. NEPRA apne notifications mein Fuel Charges Adjustment (FCA) likhta hai, jabke aksar bills aur DISCO software par Fuel Price Adjustment (FPA) chapta hai. Dono ka matlab ek hai, fuel ka reference aur actual cost ke darmiyan ka farq.</p></div></details></div>
+<div class="qa-item"><details><summary>Is waqt FPA kitna hai?</summary><div class="qa-answer"><p>October 2026 ke bills ke liye FPA Rs 1.1086 per unit hai. Yeh August 2026 ke fuel ke liye hai aur S.R.O. 1754(I)/2026 ke tehat 7 October 2026 ko notify hua. Is ke sath QTA Rs 0.5194 per unit bhi chal raha hai. Is tarah kul Rs 1.628 per unit banta hai. Agla rate NEPRA ke agle notification par munhasir hoga.</p></div></details></div>
+<div class="qa-item"><details><summary>Kya har DISCO ka FPA rate alag hota hai?</summary><div class="qa-answer"><p>Nahi. NEPRA ek hi qaumi rate notify karta hai jo tamam ex-WAPDA DISCOs aur K-Electric par lagoo hota hai. Jo farq nazar aata hai woh units ka hota hai. 500 units istemal karne wale ka FPA 200 units wale se zyada hoga, lekin per unit rate dono ka bilkul ek hai.</p></div></details></div>
+<div class="qa-item"><details><summary>Kya FPA ek tax hai?</summary><div class="qa-answer"><p>Nahi. FPA ek cost pass-through hai. Sarkar is se koi aamdani nahi kamati. Yeh woh farq hai jo bijli banane walon ko fuel ka asal mein pada, jo tariff mein lagaaye gaye andaze se zyada ya kam ho. Tax ke baraks, FPA negative bhi ho sakta hai, aur tab yeh aap ke bill se kat-ta hai.</p></div></details></div>
+<div class="qa-item"><details><summary>Prepaid meter walon ka FPA kitna hota hai?</summary><div class="qa-answer"><p>Zero. Har NEPRA FCA notification mein saaf likha hota hai ke prepaid tariff ka intekhab karne wale tamam consumers par yeh adjustment nafiz nahi hoga. Isi tarah lifeline consumers aur electric vehicle charging stations ko bhi chhoot hai.</p></div></details></div>
+<div class="qa-item"><details><summary>Mera FPA parosi se zyada kyun hai?</summary><div class="qa-answer"><p>Sab se aam wajah units ka farq hai. FPA rate sab ke liye ek hai, lekin raqam units ke hisaab se lagti hai. Doosri wajoohat mein billing date ka farq shamil hai, kyun ke agar aap ka bill notification se pehle chhap gaya ho to adjustment agle mahine lagta hai.</p></div></details></div>
+<div class="qa-item"><details><summary>Negative FPA ka kya matlab hai?</summary><div class="qa-answer"><p>Is ka matlab hai ke us mahine asal fuel cost tariff mein lagaaye gaye andaze se kam thi. Farq aap ko wapas diya jata hai. Bill par yeh bracket mein ya minus ke sath chapta hai, jaise (Rs 93). Yeh aap ka credit hai, koi ghalti nahi. 2026 mein January ke bills par Rs 0.93 per unit ka negative adjustment laga tha.</p></div></details></div>
+        </section>
+
+        <section class="section" id="final-step">
+          <span class="kicker">Next step</span>
+          <h2>Ab apna FPA khud check karein</h2>
+<p>FPA samajhne ka faida tab hai jab aap isay apne hi bill par verify karein. Apni taaza duplicate bill kholein, FPA ki line dhoondhein, aur apne units se rate multiply kar ke dekhein.</p>
+<p>Agar koi farq hai, to pehle billing month check karein. Ho sakta hai aap ka bill naye notification se pehle chhapa ho.</p>
+<p>Apni bill abhi check karein aur dekhein ke FPA ki line aap ke hisaab se milti hai ya nahi.</p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+<footer class="bb-foot">
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="/#top" class="foot-brand-link"><span class="fb-logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"/></svg></span>BijleeBill<span class="foot-pk">.pk</span></a>
+        <p>Pakistan's smartest way to check electricity bills — free, instant and private.</p>
+        <p class="foot-urdu">بجلی کا بل — اب سیکنڈوں میں <span aria-hidden="true">⚡</span></p>
+        <div class="socials">
+<a href="/contact/" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg></a>
+<a href="/contact/" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5z"/></svg></a>
+<a href="/contact/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+<a href="/contact/" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.1.1.3 0 .5l-.3.5-.3.3c-.1.1-.2.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h3>QUICK LINKS</h3>
+        <a href="/#checker-card">Check Bill</a>
+        <a href="/#discos">Supported DISCOs</a>
+        <a href="/#how">How it Works</a>
+        <a href="/#calculator">Bill Calculator</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h3>POPULAR DISCOS</h3>
+        <a href="/disco/lesco/">LESCO (Lahore)</a>
+        <a href="/disco/k-electric/">K-Electric (Karachi)</a>
+        <a href="/disco/mepco/">MEPCO (Multan)</a>
+        <a href="/disco/fesco/">FESCO (Faisalabad)</a>
+        <a href="/disco/iesco/">IESCO (Islamabad)</a>
+      </div>
+      <div class="foot-col">
+        <h3>SUPPORT</h3>
+        <a href="/contact/">Help Center</a>
+        <a href="/blog/where-is-reference-number-on-electricity-bill/">Find Reference Number</a>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Service</a>
+        <a href="/about/">About Us</a>
+        <a href="/contact/">Contact</a>
+        <a href="/contact/">support [at] bijleebill.pk</a>
+      </div>
+    </div>
+    <p class="disclaimer"><strong>Disclaimer:</strong> BijleeBill.pk is an independent bill-checking convenience service and is not affiliated with, endorsed by, or connected to PITC, any DISCO, K-Electric, or the Government of Pakistan. All company names, logos and trademarks shown on this site are the property of their respective owners and are used for identification purposes only. Your reference number is sent directly to the official public portals (bill.pitc.com.pk / ke.com.pk); saved numbers stay in your browser only. For payments, always use official DISCO / bank channels.</p>
+    <div class="foot-bottom">
+      <p>© 2026 BijleeBill.pk — All rights reserved.</p>
+      <p>Made with <span aria-hidden="true">⚡</span> in Pakistan</p>
+    </div>
+  </div>
+</footer>
+
+  <script src="../article-20261015.js" defer></script>
+<a href="/disco/lesco/" class="bb-sticky-check" aria-label="Check Bill">&#9889; Check Bill</a>
+<style>
+.bb-totop{position:fixed;right:24px;bottom:24px;z-index:70;width:46px;height:46px;
+display:grid;place-items:center;border-radius:14px;cursor:pointer;padding:0;
+background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+border:1px solid #d9e8e1;color:#047857;box-shadow:0 10px 24px rgba(4,80,59,.14);
+opacity:0;transform:translateY(14px);pointer-events:none;
+transition:opacity .3s ease,transform .3s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease,color .25s ease}
+.bb-totop.show{opacity:1;transform:none;pointer-events:auto}
+.bb-totop:hover{border-color:#047857;background:#047857;color:#fff;
+box-shadow:0 14px 30px rgba(4,120,87,.32);transform:translateY(-2px)}
+.bb-totop:focus-visible{outline:3px solid #047857;outline-offset:2px}
+.bb-totop:active{transform:translateY(0)}
+.bb-totop svg{width:20px;height:20px;display:block}
+@media(max-width:767px){.bb-totop{display:none}}
+@media(prefers-reduced-motion:reduce){.bb-totop{transition:opacity .2s ease}}
+</style>
+<button type="button" class="bb-totop" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="/assets/bb-totop.js" defer></script>
+</body>
