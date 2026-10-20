@@ -128,6 +128,27 @@
 /blog/why-is-my-bill-so-high/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-pUpRBCZnsIW2xqhPWdYEMRiNKAx5Zi4Wr+mOLh5/NrA='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
+/blog/1-unit-electricity-price-pakistan/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
+/blog/electricity-bill-check-without-reference-number/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
+/blog/electricity-bill-taxes-pakistan/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
+/blog/fixed-charges-electricity-bill/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
+/blog/fpa-in-electricity-bill/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
+/blog/net-metering-pakistan/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
+/blog/protected-unprotected-consumer-pakistan/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
 /about/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-UGrrLAPmcSEc6EZCmk9JIv3S2qpRYCOrWy2Lf0t2MXY='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
