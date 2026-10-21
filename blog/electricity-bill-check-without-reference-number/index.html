@@ -780,7 +780,7 @@ box-shadow:0 14px 30px rgba(4,120,87,.32);transform:translateY(-2px)}
 @media(prefers-reduced-motion:reduce){
   .bb-totop.show,.bb-totop.show svg{animation:none}
 }
-@media(max-width:767px){.bb-totop{display:none}}
+@media(max-width:767px){.bb-totop{display:grid;bottom:calc(72px + env(safe-area-inset-bottom));right:14px;width:44px;height:44px;border-radius:12px}}
 @media(prefers-reduced-motion:reduce){.bb-totop{transition:opacity .2s ease}}
 </style>
 <button type="button" class="bb-totop" aria-label="Back to top" title="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
