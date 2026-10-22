@@ -71,6 +71,9 @@
 /blog/electricity-bill-check-without-reference-number/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-Yi+CKBYxgBiE51oPXb6wR6TJvLJwiytg34v5dbOBFWw='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
+/blog/electricity-bill-complaint-guide/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-R7MtELM+iJ5UNf0piXew2qH3fzSdpyWhByVGnZfNzio='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
+
 /blog/electricity-bill-not-found-online/
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-oybXlEk0h1xNVEmPIquoCOEmNC/hTk6e6JztFpF195Q='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
 
