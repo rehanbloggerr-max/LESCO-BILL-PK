@@ -254,3 +254,6 @@
 /site.webmanifest
   ! Cache-Control
   Cache-Control: public, max-age=3600
+
+/blog/pay-electricity-bill-through-bank-app/
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; script-src 'self' 'sha256-Ce4lv7p/aSUcckVwGlwKziU9h7LCgKows/iTfCCttOA='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; form-action 'self' https://bill.pitc.com.pk https://bill.lesco.gov.pk https://bill.lesco.gov.pk:36269 https://www.ke.com.pk https://ke.com.pk; manifest-src 'self'; media-src 'self'; worker-src 'self'; frame-src 'none'; child-src 'none'; upgrade-insecure-requests
