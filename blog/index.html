@@ -24,6 +24,7 @@
     .post-card{position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.9);box-shadow:0 16px 42px rgba(6,30,22,.08);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
     .post-card:hover{transform:translateY(-6px);border-color:#c4dfd3;box-shadow:0 24px 70px rgba(4,80,59,.14)}
     .post-cover{position:relative;height:116px;padding:18px;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(135deg,#059669,#10b981 58%,#f59e0b)}
+    .post-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .post-cover::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 14% 10%,rgba(255,255,255,.34),transparent 28%),radial-gradient(circle at 82% 22%,rgba(255,255,255,.2),transparent 24%)}
     .post-cover .icon{position:relative;z-index:1;width:48px;height:48px;display:grid;place-items:center;border-radius:16px;background:rgba(255,255,255,.2);color:#fff;font-size:1.5rem;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22)}
     .post-body{display:flex;flex:1;flex-direction:column;padding:22px}
@@ -83,16 +84,16 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
           <h1 class="hero-title">Electricity bill guides, <span>bill smarts & payment help.</span></h1>
           <p class="hero-lede">Short, practical reads for every Pakistani household. Check bills online, understand charges, verify status, estimate costs and pay safely.</p>
           <div class="blog-stats" aria-label="Blog stats">
-            <span class="blog-stat">37 practical guides</span>
+            <span class="blog-stat">39 practical guides</span>
             <span class="blog-stat">Bill check guides</span>
             <span class="blog-stat">Payment help</span>
             <span class="blog-stat">No signup needed</span>
           </div>
           <div class="filter-row" aria-label="Topics">
-            <a class="filter-chip active" href="#articles">All <span class="count">37</span></a>
+            <a class="filter-chip active" href="#articles">All <span class="count">39</span></a>
             <a class="filter-chip" href="#guides">Guides <span class="count">31</span></a>
             <a class="filter-chip" href="#status">Status <span class="count">1</span></a>
-            <a class="filter-chip" href="#payment">Payment <span class="count">4</span></a>
+            <a class="filter-chip" href="#payment">Payment <span class="count">6</span></a>
             <a class="filter-chip" href="#calculator">Calculator <span class="count">1</span></a>
           </div>
         </div>
@@ -120,8 +121,17 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
       </div>
 
       <div class="blog-grid" id="guides">
+<a class="post-card" href="./pay-electricity-bill-in-installments-pakistan/">
+  <div class="post-cover"><img src="/images/electricity-bill-installments-cover-400.webp" width="400" height="210" alt="Customer reviewing an electricity bill beside a phone and calculator" loading="lazy" decoding="async"></div>
+  <div class="post-body">
+    <span class="post-kicker">Guide · Payments</span>
+    <h2>Pay electricity bill in installments Pakistan: safe steps</h2>
+    <p>What the CSM says, how current bills differ from arrears, and what to check with your DISCO.</p>
+    <div class="post-meta"><span>Updated 2026-10-31</span><span>12 min read</span></div>
+  </div>
+</a>
 <a class="post-card" href="./electricity-bill-qr-code-payment/">
-  <div class="post-cover"><span class="icon">▦</span></div>
+  <div class="post-cover"><img src="/images/electricity-bill-qr-code-payment-cover-400.webp" width="400" height="210" alt="" loading="lazy" decoding="async"></div>
   <div class="post-body">
     <span class="post-kicker">Guide · Payments</span>
     <h2>Electricity bill QR code payment: how to pay safely</h2>
