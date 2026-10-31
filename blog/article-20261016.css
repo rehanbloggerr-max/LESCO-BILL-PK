@@ -784,3 +784,30 @@ html{overflow-x:clip}
 .related-guide-list .related-guide-label{margin-right:.35rem;color:var(--emerald);font-size:.72rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.related-guide-list .related-guide-label::after{content:":"}
 .related-guide-list a{color:var(--emerald);font-weight:800;text-decoration:underline;text-decoration-color:rgba(4,120,87,.28);text-underline-offset:2px}
 .related-guide-list .related-guide-description{display:block;margin-top:2px;color:var(--muted);font-size:.92rem}
+
+
+/* Desktop and compact-desktop TOC: keep the sidebar visible and sticky. */
+@media (min-width:768px) and (max-width:1060px){
+  .article-layout{
+    grid-template-columns:minmax(210px,260px) minmax(0,1fr);
+    gap:22px;
+  }
+  .article-layout > .toc{
+    position:-webkit-sticky!important;
+    position:sticky!important;
+    top:94px!important;
+    align-self:start!important;
+    display:block!important;
+    max-height:calc(100vh - 110px);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    z-index:8;
+  }
+  .on-this-page-mobile{display:none!important}
+}
+
+/* Avoid making body the nearest scroll container for position:sticky. */
+body{overflow-x:clip;overflow-y:visible}
+@supports not (overflow-x:clip){
+  body{overflow-x:visible;overflow-y:visible}
+}
