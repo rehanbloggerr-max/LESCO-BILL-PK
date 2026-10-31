@@ -761,3 +761,11 @@ html{overflow-x:clip}
 @supports not (overflow-x:clip){
   html{overflow-x:hidden}
 }
+
+/* Related guides use a clear text list across all article types, never card tiles. */
+.related-guides-heading{margin:20px 0 8px;color:var(--ink);font-size:1.04rem;line-height:1.35;font-weight:800}
+.related-guide-list{margin:12px 0 0;padding-left:1.25rem}
+.related-guide-list .related-guide-item{margin:0 0 12px;padding-left:3px;color:var(--muted);line-height:1.6}
+.related-guide-list .related-guide-label{margin-right:.35rem;color:var(--emerald);font-size:.72rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}.related-guide-list .related-guide-label::after{content:":"}
+.related-guide-list a{color:var(--emerald);font-weight:800;text-decoration:underline;text-decoration-color:rgba(4,120,87,.28);text-underline-offset:2px}
+.related-guide-list .related-guide-description{display:block;margin-top:2px;color:var(--muted);font-size:.92rem}
