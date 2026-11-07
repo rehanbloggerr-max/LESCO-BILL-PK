@@ -92,6 +92,60 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
 .foot-bottom{flex-direction:column;text-align:center}
 .bb-foot{padding:44px 0 26px}}
 
+</style><style id="current-article-components">
+    .guide-cover{overflow:hidden;margin:0 0 22px;border:1px solid var(--line);border-radius:34px;background:#fff;box-shadow:0 18px 45px rgba(7,26,20,.09)}
+    .guide-cover img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover}
+    .table-wrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;border:1px solid #dcebe4;border-radius:22px;background:#fff;box-shadow:0 12px 30px rgba(6,30,22,.06)}
+    .table-wrap:focus-visible{outline:3px solid #10b981;outline-offset:2px}
+    .guide-table{width:100%;min-width:660px;border-collapse:separate;border-spacing:0;line-height:1.6}
+    .guide-table th{padding:14px 16px;text-align:left;color:#073b2b;background:#eafbf3;border-bottom:1px solid #d7ebdf;font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-size:.93rem;letter-spacing:-.01em}
+    .guide-table td{padding:13px 16px;color:#4f635d;border-bottom:1px solid #edf6f1;vertical-align:top;font-size:.95rem}
+    .guide-table tbody tr:last-child td{border-bottom:0}
+    .guide-table tbody tr:hover td{background:#fbfefd}
+    .check-list{list-style:none;padding:0!important;display:grid;gap:11px}
+    .check-list li{display:flex;align-items:flex-start;gap:12px;margin:0!important;padding:13px 14px;border:1px solid #dcebe4;border-radius:18px;background:linear-gradient(180deg,#fff,#fbfefd);color:#4f635d;line-height:1.65}
+    .check-box{flex:0 0 auto;width:21px;height:21px;margin-top:2px;border:2px solid var(--emerald-2);border-radius:6px;box-shadow:inset 0 0 0 3px #fff;background:#fff}
+    .qa-item{margin:15px 0;border:1px solid #dcebe4;border-radius:20px;background:linear-gradient(180deg,#fff,#fbfefd);overflow:hidden}
+    .qa-item summary{padding:17px 19px;cursor:pointer;color:#0b261c;font-weight:900;line-height:1.45;list-style:none}
+    .qa-item summary::-webkit-details-marker{display:none}
+    .qa-item summary::after{content:"+";float:right;margin-left:12px;color:var(--emerald);font-size:1.25rem;font-weight:900;transition:transform .2s ease}
+    .qa-item[open] summary::after{transform:rotate(45deg)}
+    .qa-answer{padding:0 19px 18px}
+    .qa-answer p:last-child{margin-bottom:0}
+    @media(max-width:720px){.guide-cover{margin-left:-6px;margin-right:-6px;border-radius:24px}.guide-table{min-width:590px}}
+  
+    .author-byline{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:0 0 22px;
+      font-size:.9rem;line-height:1.6;color:#4f635d}
+    .author-byline .author-av{width:30px;height:30px;margin-right:10px;border-radius:50%;
+      flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+      font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-weight:900;font-size:.76rem;
+      letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#047857,#10b981)}
+    .author-byline strong{color:#0b261c;font-weight:800}
+    .author-byline .author-sep{color:#c3d3cd;margin:0 7px}
+    .author-byline .author-date{color:#7d918a}
+    .author-card{display:flex;gap:16px;align-items:flex-start;margin:26px 0 26px;
+      padding:20px 22px;border:1px solid #dcebe4;border-radius:24px;
+      background:linear-gradient(180deg,#fff,#fbfefd);box-shadow:0 12px 30px rgba(6,30,22,.06)}
+    .author-card .author-av{width:50px;height:50px;flex:0 0 auto;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-weight:900;font-size:1.1rem;
+      letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#047857,#10b981)}
+    .author-card .author-nm{font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;
+      font-weight:900;font-size:1.02rem;letter-spacing:-.01em;color:#0b261c;margin:0 0 2px}
+    .author-card .author-rl{font-size:.82rem;color:#7d918a;margin:0 0 9px}
+    .author-card p{margin:0 0 10px;font-size:.89rem;line-height:1.68;color:#4f635d}
+    .author-card .author-more{color:#047857;font-weight:700;text-decoration:none;font-size:.86rem}
+    .author-card .author-more:hover{text-decoration:underline}
+    @media(max-width:720px){.author-card{flex-direction:column;gap:12px}}
+
+    .chart-figure{margin:22px 0;padding:16px 16px 12px;border:1px solid #dcebe4;
+      border-radius:22px;background:linear-gradient(180deg,#fff,#fbfefd);
+      box-shadow:0 12px 30px rgba(6,30,22,.06);overflow-x:auto;max-width:100%;
+      -webkit-overflow-scrolling:touch}
+    .chart-figure:focus-visible{outline:3px solid #10b981;outline-offset:2px}
+    .chart-svg{display:block;width:100%;height:auto}
+    @media(max-width:720px){.chart-figure{margin-left:-6px;margin-right:-6px;
+      border-radius:18px}.chart-svg{min-width:600px}}
 </style></head>
 <body>
 <div aria-hidden="true" class="reading-progress"></div>
@@ -135,14 +189,14 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
 <td>Check your account activity before trying again</td>
 </tr>
 </tbody>
-</table><p>A successful transaction does not prove payment reached your intended bill. Check the receipt’s reference number.</p></section><section class="section" id="what-to-do-after-paying-the-wrong-reference"><span class="kicker">Safe next steps</span><h2 id="what-to-do-after-paying-the-wrong-reference">What to do after paying the wrong reference</h2><ol aria-label="Steps after paying the wrong reference" class="steps"><li><div><strong>Save your payment record</strong><p>Keep the original receipt, confirmation message or transaction screen. Take a screenshot of visible payment details.</p><p>Write down:</p><ul>
+</table><p>A successful transaction does not prove payment reached your intended bill. Check the receipt’s reference number.</p></section><section class="section" id="what-to-do-after-paying-the-wrong-reference"><span class="kicker">Safe next steps</span><h2 id="what-to-do-after-paying-the-wrong-reference">What to do after paying the wrong reference</h2><ol aria-label="Steps after paying the wrong reference" class="steps"><li><div><strong>Save your payment record.</strong><p>Keep the original receipt, confirmation message or transaction screen. Take a screenshot of visible payment details.</p><p>Write down:</p><ul>
 <li>The transaction ID or reference.</li>
 <li>The date, time and amount.</li>
 <li>The reference number entered during payment.</li>
 <li>The reference number on the bill you meant to pay.</li>
 <li>The payment method and provider.</li>
 <li>Any complaint or support ticket numbers.</li>
-</ul><p>Never share your password, PIN or one-time code. Use only official support channels.</p></div></li><li><div><strong>Contact the payment provider</strong><p>Contact the bank, wallet or payment service used for the transaction. Use its official app, website, phone number or branch.</p><p>Tell the provider the transaction completed. The electricity reference number may be wrong. Ask the provider to trace the transaction and explain its process. Request a complaint or ticket number. Keep a written response.</p><p>For a pending or failed transaction, ask the provider to confirm its status first. A debit notification alone does not prove payment reached your intended bill.</p></div></li><li><div><strong>Contact the electricity company</strong><p>Contact the distribution company linked to the receipt’s reference. A distribution company is often called a DISCO. Contact your intended bill’s company too.</p><p>Share the transaction ID, amount, date and both reference numbers through an official channel. Ask the company to check its records and explain its process.</p><p>Official sources do not confirm a universal right to recover or transfer this payment. Ask the company how it handles the case. Get its answer in writing. Keep the complaint number.</p></div></li><li><div><strong>Keep both sides updated</strong><p>Your provider can trace its transaction. The electricity company can check its billing records. Either side may request your receipt or more payment details.</p><p>Keep a record of each contact. Note the date, channel, complaint number and response. A provider may send you to another support team. Ask for the instruction in writing.</p></div></li></ol></section><section class="section" id="how-to-complain-through-pitc-ccms"><span class="kicker">Official complaint route</span><h2 id="how-to-complain-through-pitc-ccms">How to complain through PITC CCMS</h2><p>For complaints handled through PITC’s Customer Complaint Management System, its website lists these channels.</p><p>The <a href="https://ccms.pitc.com.pk/complaint">Register Complaint page</a> lets you search by a 14-digit reference or 12-digit mobile number. Its form shows fields for Complaint Category, Complaint Type and Complaint Details. Use the details field to explain the two references and include the payment transaction ID.</p><ul>
+</ul><p>Never share your password, PIN or one-time code. Use only official support channels.</p></div></li><li><div><strong>Contact the payment provider.</strong><p>Contact the bank, wallet or payment service used for the transaction. Use its official app, website, phone number or branch.</p><p>Tell the provider the transaction completed. The electricity reference number may be wrong. Ask the provider to trace the transaction and explain its process. Request a complaint or ticket number. Keep a written response.</p><p>For a pending or failed transaction, ask the provider to confirm its status first. A debit notification alone does not prove payment reached your intended bill.</p></div></li><li><div><strong>Contact the electricity company.</strong><p>Contact the distribution company linked to the receipt’s reference. A distribution company is often called a DISCO. Contact your intended bill’s company too.</p><p>Share the transaction ID, amount, date and both reference numbers through an official channel. Ask the company to check its records and explain its process.</p><p>Official sources do not confirm a universal right to recover or transfer this payment. Ask the company how it handles the case. Get its answer in writing. Keep the complaint number.</p></div></li><li><div><strong>Keep both sides updated.</strong><p>Your provider can trace its transaction. The electricity company can check its billing records. Either side may request your receipt or more payment details.</p><p>Keep a record of each contact. Note the date, channel, complaint number and response. A provider may send you to another support team. Ask for the instruction in writing.</p></div></li></ol></section><section class="section" id="how-to-complain-through-pitc-ccms"><span class="kicker">Official complaint route</span><h2 id="how-to-complain-through-pitc-ccms">How to complain through PITC CCMS</h2><p>For complaints handled through PITC’s Customer Complaint Management System, its website lists these channels.</p><p>The <a href="https://ccms.pitc.com.pk/complaint">Register Complaint page</a> lets you search by a 14-digit reference or 12-digit mobile number. Its form shows fields for Complaint Category, Complaint Type and Complaint Details. Use the details field to explain the two references and include the payment transaction ID.</p><ul>
 <li>Call <strong>118</strong>.</li>
 <li>Send an SMS to <strong>8118</strong>.</li>
 <li>Email <code>ccms@pitc.com.pk</code>.</li>
@@ -215,7 +269,6 @@ button:not(:disabled),[role="button"]:not([aria-disabled="true"]):not(:disabled)
 </div>
 </div>
 </footer>
-
 <script defer="" src="../article-20261015.js"></script><script defer="" src="/assets/bb-header-v2.js"></script><a aria-label="Check bill" class="bb-sticky-check" href="/disco/lesco/">⚡ Check Bill</a><style>
 .bb-totop{position:fixed;right:24px;bottom:24px;z-index:70;width:46px;height:46px;
 display:grid;place-items:center;border-radius:14px;cursor:pointer;padding:0;
