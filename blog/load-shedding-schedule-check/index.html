@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#059669" name="theme-color"/>
+<title>Load Shedding Schedule Check: Find Your Feeder Timing</title>
+<meta content="Find your feeder’s load shedding schedule using your bill and official DISCO resources. Compare maintenance notices and report unexpected outages." name="description"/>
+<link href="https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/" rel="canonical"/>
+<meta content="en_PK" property="og:locale"/>
+<meta content="article" property="og:type"/>
+<meta content="BijleeBill.pk" property="og:site_name"/>
+<meta content="Load Shedding Schedule Check: Find Your Feeder Timing" property="og:title"/>
+<meta content="Find your feeder’s load shedding schedule using your bill and official DISCO resources. Compare maintenance notices and report unexpected outages." property="og:description"/>
+<meta content="https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/" property="og:url"/>
+<meta content="https://lesco-bill-pk.rehanbloggerr.workers.dev/images/load-shedding-schedule-check-cover.webp" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<link as="font" crossorigin="" href="/fonts/plus-jakarta-sans-latin-var.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/fonts/outfit-latin-var.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="" href="/fonts/jetbrains-mono-latin-700-normal.woff2" rel="preload" type="font/woff2"/>
+<link href="../article-20261016.css" rel="stylesheet"/>
+<link href="/assets/header-20261010.css" rel="stylesheet"/>
+<style>
+    .guide-cover{overflow:hidden;margin:0 0 22px;border:1px solid var(--line);border-radius:34px;background:#fff;box-shadow:0 18px 45px rgba(7,26,20,.09)}
+    .guide-cover img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover}
+    .table-wrap{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;border:1px solid #dcebe4;border-radius:22px;background:#fff;box-shadow:0 12px 30px rgba(6,30,22,.06)}
+    .table-wrap:focus-visible{outline:3px solid #10b981;outline-offset:2px}
+    .guide-table{width:100%;min-width:660px;border-collapse:separate;border-spacing:0;line-height:1.6}
+    .guide-table th{padding:14px 16px;text-align:left;color:#073b2b;background:#eafbf3;border-bottom:1px solid #d7ebdf;font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-size:.93rem;letter-spacing:-.01em}
+    .guide-table td{padding:13px 16px;color:#4f635d;border-bottom:1px solid #edf6f1;vertical-align:top;font-size:.95rem}
+    .guide-table tbody tr:last-child td{border-bottom:0}
+    .guide-table tbody tr:hover td{background:#fbfefd}
+    .check-list{list-style:none;padding:0!important;display:grid;gap:11px}
+    .check-list li{display:flex;align-items:flex-start;gap:12px;margin:0!important;padding:13px 14px;border:1px solid #dcebe4;border-radius:18px;background:linear-gradient(180deg,#fff,#fbfefd);color:#4f635d;line-height:1.65}
+    .check-box{flex:0 0 auto;width:21px;height:21px;margin-top:2px;border:2px solid var(--emerald-2);border-radius:6px;box-shadow:inset 0 0 0 3px #fff;background:#fff}
+    .qa-item{margin:15px 0;border:1px solid #dcebe4;border-radius:20px;background:linear-gradient(180deg,#fff,#fbfefd);overflow:hidden}
+    .qa-item summary{padding:17px 19px;cursor:pointer;color:#0b261c;font-weight:900;line-height:1.45;list-style:none}
+    .qa-item summary::-webkit-details-marker{display:none}
+    .qa-item summary::after{content:"+";float:right;margin-left:12px;color:var(--emerald);font-size:1.25rem;font-weight:900;transition:transform .2s ease}
+    .qa-item[open] summary::after{transform:rotate(45deg)}
+    .qa-answer{padding:0 19px 18px}
+    .qa-answer p:last-child{margin-bottom:0}
+    @media(max-width:720px){.guide-cover{margin-left:-6px;margin-right:-6px;border-radius:24px}.guide-table{min-width:590px}}
+  
+    .author-byline{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:0 0 22px;
+      font-size:.9rem;line-height:1.6;color:#4f635d}
+    .author-byline .author-av{width:30px;height:30px;margin-right:10px;border-radius:50%;
+      flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+      font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-weight:900;font-size:.76rem;
+      letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#047857,#10b981)}
+    .author-byline strong{color:#0b261c;font-weight:800}
+    .author-byline .author-sep{color:#c3d3cd;margin:0 7px}
+    .author-byline .author-date{color:#7d918a}
+    .author-card{display:flex;gap:16px;align-items:flex-start;margin:26px 0 26px;
+      padding:20px 22px;border:1px solid #dcebe4;border-radius:24px;
+      background:linear-gradient(180deg,#fff,#fbfefd);box-shadow:0 12px 30px rgba(6,30,22,.06)}
+    .author-card .author-av{width:50px;height:50px;flex:0 0 auto;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;font-weight:900;font-size:1.1rem;
+      letter-spacing:.02em;color:#fff;background:linear-gradient(135deg,#047857,#10b981)}
+    .author-card .author-nm{font-family:"Outfit","Plus Jakarta Sans",system-ui,sans-serif;
+      font-weight:900;font-size:1.02rem;letter-spacing:-.01em;color:#0b261c;margin:0 0 2px}
+    .author-card .author-rl{font-size:.82rem;color:#7d918a;margin:0 0 9px}
+    .author-card p{margin:0 0 10px;font-size:.89rem;line-height:1.68;color:#4f635d}
+    .author-card .author-more{color:#047857;font-weight:700;text-decoration:none;font-size:.86rem}
+    .author-card .author-more:hover{text-decoration:underline}
+    @media(max-width:720px){.author-card{flex-direction:column;gap:12px}}
+
+    .chart-figure{margin:22px 0;padding:16px 16px 12px;border:1px solid #dcebe4;
+      border-radius:22px;background:linear-gradient(180deg,#fff,#fbfefd);
+      box-shadow:0 12px 30px rgba(6,30,22,.06);overflow-x:auto;max-width:100%;
+      -webkit-overflow-scrolling:touch}
+    .chart-figure:focus-visible{outline:3px solid #10b981;outline-offset:2px}
+    .chart-svg{display:block;width:100%;height:auto}
+    @media(max-width:720px){.chart-figure{margin-left:-6px;margin-right:-6px;
+      border-radius:18px}.chart-svg{min-width:600px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/#article", "headline": "Load shedding schedule check: find your feeder timing", "description": "Find your feeder’s load shedding schedule using your bill and official DISCO resources. Compare maintenance notices and report unexpected outages.", "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/", "mainEntityOfPage": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/", "image": {"@type": "ImageObject", "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/images/load-shedding-schedule-check-cover.webp", "width": 1200, "height": 630}, "author": {"@type": "Organization", "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/#organization", "name": "BijleeBill.pk Team", "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/"}, "publisher": {"@type": "Organization", "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/#organization", "name": "BijleeBill.pk", "url": "https://lesco-bill-pk.rehanbloggerr.workers.dev/"}, "datePublished": "2026-10-07", "dateModified": "2026-10-07", "articleSection": "Power supply", "keywords": ["load shedding schedule check", "feeder timing", "electricity load shedding schedule"], "inLanguage": "en-PK"}, {"@type": "FAQPage", "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/#faq", "mainEntity": [{"@type": "Question", "name": "How can I find my feeder name if it is not printed on my bill?", "acceptedAnswer": {"@type": "Answer", "text": "Ask your electricity company's customer service or local office. Give your account or reference number through an official channel and ask which feeder currently supplies your connection. Some providers also show feeder information in their official apps or schedule tools."}}, {"@type": "Question", "name": "Can I check a schedule using my reference or account number?", "acceptedAnswer": {"@type": "Answer", "text": "Some providers offer that option. The LESCO schedule page is indexed as requesting a reference number, while K-Electric's official page offers account-number searches. Availability and results can vary; contact your provider if the page does not work or the result is unclear."}}, {"@type": "Question", "name": "Are maintenance shutdowns and load shedding the same?", "acceptedAnswer": {"@type": "Answer", "text": "No. Load management and planned network maintenance are different reasons for interrupting supply. Providers may publish separate schedules or notices for them, so check both where relevant."}}, {"@type": "Question", "name": "Why does a nearby street have a different outage?", "acceptedAnswer": {"@type": "Answer", "text": "Nearby connections may be supplied by different feeders or affected by different parts of the network. A local fault or maintenance work can also affect one area without affecting another. Ask your provider which feeder serves your connection."}}, {"@type": "Question", "name": "Does an empty result mean my area is exempt?", "acceptedAnswer": {"@type": "Answer", "text": "Not necessarily. A missing or empty result may have several explanations, including an unavailable lookup or a schedule for a different period. Confirm with your electricity company before assuming there is no scheduled outage."}}, {"@type": "Question", "name": "Will the electricity return exactly when the schedule says?", "acceptedAnswer": {"@type": "Answer", "text": "A listed window is useful for planning, but it is not a guarantee. Timings can be revised, and unrelated faults or other interruptions can occur. Contact the provider for updates if supply remains off."}}]}, {"@type": "BreadcrumbList", "@id": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lesco-bill-pk.rehanbloggerr.workers.dev/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/"}, {"@type": "ListItem", "position": 3, "name": "Load shedding schedule check", "item": "https://lesco-bill-pk.rehanbloggerr.workers.dev/blog/load-shedding-schedule-check/"}]}]}</script>
+<style>
+/* Visible, template-matched numbering for procedural lists */
+.article .numbered-steps{counter-reset:bb-step;list-style:none!important;padding:0!important;margin:18px 0 24px;display:grid;gap:11px}
+.article .numbered-steps li{counter-increment:bb-step;position:relative;margin:0!important;padding:14px 16px 14px 58px;border:1px solid #dcebe4;border-radius:18px;background:linear-gradient(180deg,#fff,#fbfefd);color:#4f635d;line-height:1.65}
+.article .numbered-steps li::before{content:counter(bb-step);position:absolute;left:16px;top:13px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#047857;color:#fff;font-weight:900;font-size:.9rem}
+</style><meta content="summary_large_image" name="twitter:card"/><meta content="Load Shedding Schedule Check: Find Your Feeder Timing" name="twitter:title"/><meta content="Find your feeder’s load shedding schedule using your bill and official DISCO resources. Compare maintenance notices and report unexpected outages." name="twitter:description"/><meta content="https://lesco-bill-pk.rehanbloggerr.workers.dev/images/load-shedding-schedule-check-cover.webp" name="twitter:image"/></head>
+<body>
+<div aria-hidden="true" class="reading-progress"></div>
+<div id="bb-site-header"><header class="fixed inset-x-0 top-0 z-50 transition-all duration-300 border-b border-slate-200/70 bg-white/80 shadow-sm backdrop-blur-xl"><div class="mx-auto flex h-[68px] max-w-[1320px] items-center justify-between px-5 sm:px-8"><a aria-label="BijleeBill.pk home" class="group flex items-center gap-2.5" href="/#top"><span class="relative grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-700 text-amber-300 shadow-lg shadow-emerald-600/30 transition group-hover:rotate-[-6deg] group-hover:scale-105"><svg aria-hidden="true" class="h-5 w-5" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"></path></svg></span><span class="font-display text-xl font-extrabold tracking-tight text-slate-900">Bijlee<span class="text-emerald-600">Bill</span><span class="text-slate-400">.pk</span></span></a><nav class="hidden items-center gap-1 lg:flex"><a class="relative rounded-full px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700" href="/#top">Check Bill</a><div class="bb-disco-dropdown" style="position: relative; display: inline-block;"><button style="border: 0px; background: transparent; border-radius: 999px; padding: 8px 14px; color: rgb(71, 85, 105); cursor: pointer;" type="button">DISCOs ▾</button><div style="display: none; position: absolute; top: 100%; right: 0px; z-index: 100; background: rgb(255, 255, 255); border: 1px solid rgb(219, 231, 225); border-radius: 16px; padding: 8px; min-width: 190px; box-shadow: rgba(6, 78, 59, 0.133) 0px 18px 40px; grid-template-columns: 1fr 1fr; gap: 2px;"><a href="/disco/lesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">LESCO</a><a href="/disco/iesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">IESCO</a><a href="/disco/gepco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">GEPCO</a><a href="/disco/fesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">FESCO</a><a href="/disco/mepco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">MEPCO</a><a href="/disco/pesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">PESCO</a><a href="/disco/hesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">HESCO</a><a href="/disco/sepco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">SEPCO</a><a href="/disco/qesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">QESCO</a><a href="/disco/tesco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">TESCO</a><a href="/disco/hazeco/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">HAZECO</a><a href="/disco/k-electric/" style="padding: 9px 10px; border-radius: 9px; color: rgb(71, 85, 105); text-decoration: none; font: 600 12px system-ui, sans-serif;">K-Electric</a></div></div><a class="relative rounded-full px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700" href="/#how">How it works</a><a class="relative rounded-full px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700" href="/#calculator">Calculator<span class="ml-1.5 rounded-full bg-amber-400 px-1.5 py-0.5 align-middle text-[11px] font-extrabold uppercase text-amber-950">New</span></a><a class="relative rounded-full px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700" href="/blog/">Blog</a><a class="relative rounded-full px-3.5 py-2 text-sm font-semibold text-slate-600 transition hover:bg-emerald-50 hover:text-emerald-700" href="/#faq">FAQ</a></nav><div class="flex items-center gap-2"><a class="hidden items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-emerald-600/25 transition hover:bg-emerald-500 sm:inline-flex" href="/#top"><svg aria-hidden="true" class="h-4 w-4 text-amber-300" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"></path></svg> Check My Bill</a><button aria-expanded="false" aria-label="Toggle menu" class="grid h-12 w-12 place-items-center rounded-xl border border-slate-200 bg-white text-slate-700 lg:hidden" type="button"><svg aria-hidden="true" class="h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"></path></svg><svg aria-hidden="true" class="hidden h-5 w-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"></path></svg></button></div></div><div class="border-t border-slate-100 bg-white/95 px-5 pb-5 pt-2 shadow-xl backdrop-blur-xl lg:hidden" hidden="" id="bb-mobile-panel"><div aria-label="Bill check by company" class="bb-disco-chips"><a href="/disco/lesco/">LESCO</a><a href="/disco/iesco/">IESCO</a><a href="/disco/gepco/">GEPCO</a><a href="/disco/fesco/">FESCO</a><a href="/disco/mepco/">MEPCO</a><a href="/disco/pesco/">PESCO</a><a href="/disco/hesco/">HESCO</a><a href="/disco/sepco/">SEPCO</a><a href="/disco/qesco/">QESCO</a><a href="/disco/tesco/">TESCO</a><a href="/disco/hazeco/">HAZECO</a><a href="/disco/k-electric/">K-Electric</a></div><a class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50" href="/#top">Check Bill<svg aria-hidden="true" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50" href="/#discos">DISCOs<svg aria-hidden="true" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50" href="/#how">How it works<svg aria-hidden="true" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50" href="/#calculator">Calculator<span class="rounded-full bg-amber-400 px-2 py-0.5 text-[12px] font-extrabold uppercase text-amber-950">New</span></a><a class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50" href="/blog/">Blog<svg aria-hidden="true" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="flex items-center justify-between rounded-xl px-3 py-3 text-base font-semibold text-slate-700 hover:bg-emerald-50" href="/#faq">FAQ<svg aria-hidden="true" class="h-4 w-4 text-slate-300" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a><a class="mt-3 flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-3.5 font-bold text-white" href="/#top"><svg aria-hidden="true" class="h-4 w-4 text-amber-300" fill="currentColor" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"></path></svg> Check My Bill</a></div></header></div>
+<main><section class="article-hero"><div class="shell hero-grid"><div><div class="eyebrow">BijleeBill guide · Power supply</div><h1 class="hero-title">Load shedding schedule check: <span>find your feeder timing</span></h1><p class="hero-lede">Find your provider and feeder, check the applicable official schedule, and know what to do when the power goes off unexpectedly.</p><div class="hero-actions"><a class="btn btn-primary" href="../../#top">Check my bill</a><a class="btn btn-ghost" href="#quick-answer">Start with the quick answer</a></div></div><aside aria-label="Feeder schedule quick facts" class="hero-card"><span class="hero-tag">Quick answer</span><h2>Start with your feeder</h2><p>Use a recent bill and ask your electricity company if you need help identifying the feeder serving your connection.</p><div class="metric-grid"><div class="metric"><strong>Provider</strong><span>Find it on your bill</span></div><div class="metric"><strong>Feeder</strong><span>Confirm its name</span></div><div class="metric"><strong>Dates</strong><span>Check applicable dates</span></div></div></aside></div></section><div class="shell article-layout"><aside aria-label="On this page" class="toc"><small>On this page</small><a class="toc-link" href="#overview">Find the schedule for your connection</a><a class="toc-link" href="#quick-answer">Quick answer</a><a class="toc-link" href="#check-feeder-timing">How to check your feeder's load shedding schedule</a><a class="toc-link" href="#official-schedule-routes">Official schedule routes by electricity company</a><a class="toc-link" href="#read-feeder-schedule">How to read a feeder schedule</a><a class="toc-link" href="#types-of-interruption">Load shedding, maintenance or an unexpected fault?</a><a class="toc-link" href="#schedule-not-available">What if the load shedding schedule is not available?</a><a class="toc-link" href="#unexpected-outage">What to do if the power is out outside the schedule</a><a class="toc-link" href="#faqs">Frequently asked questions</a><a class="toc-link" href="#related-guides">Related guides</a><a class="toc-link" href="#final-step">Final step</a><a class="toc-link" href="#sources">Sources</a></aside><div class="on-this-page-mobile"><details><summary>Jump to a section</summary><a class="toc-link" href="#overview">Find the schedule for your connection</a><a class="toc-link" href="#quick-answer">Quick answer</a><a class="toc-link" href="#check-feeder-timing">How to check your feeder's load shedding schedule</a><a class="toc-link" href="#official-schedule-routes">Official schedule routes by electricity company</a><a class="toc-link" href="#read-feeder-schedule">How to read a feeder schedule</a><a class="toc-link" href="#types-of-interruption">Load shedding, maintenance or an unexpected fault?</a><a class="toc-link" href="#schedule-not-available">What if the load shedding schedule is not available?</a><a class="toc-link" href="#unexpected-outage">What to do if the power is out outside the schedule</a><a class="toc-link" href="#faqs">Frequently asked questions</a><a class="toc-link" href="#related-guides">Related guides</a><a class="toc-link" href="#final-step">Final step</a><a class="toc-link" href="#sources">Sources</a></details></div><article class="article"><div class="author-byline"><span aria-hidden="true" class="author-av">BB</span><span><strong>BijleeBill.pk Team</strong><span class="author-sep">·</span><span class="author-date">Updated 7 Oct 2026</span><span class="author-sep">·</span><span class="author-date">9 min read</span></span></div><figure class="guide-cover"><img alt="Consumer checking an electricity bill and a schedule on a phone" decoding="async" fetchpriority="high" height="630" loading="eager" sizes="(max-width: 700px) calc(100vw - 32px), 760px" src="/images/load-shedding-schedule-check-cover-400.webp" srcset="/images/load-shedding-schedule-check-cover-400.webp 400w, /images/load-shedding-schedule-check-cover-800.webp 800w, /images/load-shedding-schedule-check-cover.webp 1200w" width="1200"/></figure><section class="section" id="overview"><span class="kicker">Start here</span><h2>Find the schedule for your connection</h2><p>Wondering when the power will be off? Start with your electricity company and the feeder serving your connection. There is no single load shedding schedule for every household in Pakistan, and even nearby streets can be on different feeders.</p><p>Keep a recent bill handy. Find your provider and reference or account number, then check its official schedule. If you do not know your feeder, ask the company to identify it. Before making plans, check the dates and time windows on the notice.</p></section><section class="section" id="quick-answer"><span class="kicker">Quick answer</span><h2>Quick answer</h2><p> Use your provider's official load-shedding schedule or customer service to find your feeder timing. Also check maintenance notices if relevant. A published schedule can change and will not necessarily explain an unexpected fault or guarantee a restoration time.</p></section><section class="section" id="check-feeder-timing"><span class="kicker">Guide section</span><h2>How to check your feeder's load shedding schedule</h2><ol class="numbered-steps">
+<li><strong>Identify your electricity company.</strong> Look at a recent bill for the name of your provider, such as LESCO, IESCO or K-Electric. Use the company that serves your connection, not simply the one serving a nearby neighbourhood.</li>
+<li><strong>Keep your reference or account number ready.</strong> The exact identifier requested depends on the provider. If you need help finding it, see our <a href="/blog/where-is-reference-number-on-electricity-bill/">guide to the reference number on an electricity bill</a> or learn the difference between a <a href="/blog/reference-number-vs-customer-id/">reference number and customer ID</a>.</li>
+<li><strong>Find your feeder name or code.</strong> Check your bill or your provider's official resources if they show it. Not every bill or portal displays a usable feeder name. If you cannot find yours, ask your electricity company's customer service or local office to confirm it.</li>
+<li><strong>Open the relevant official schedule.</strong> Choose the appropriate load-shedding or load-management page. If schedules are organised by circle or office, select the relevant area and open a suitably dated document, if available.</li>
+<li><strong>Match the details.</strong> Check the feeder name, applicable dates, time windows and any notes. If the information is missing, outdated or unclear, ask the provider to confirm the schedule rather than guessing.</li>
+</ol><p>Keep your account details private. Enter them only on trusted official channels, and do not post a complete bill or account number publicly when asking for help.</p></section><section class="section" id="official-schedule-routes"><span class="kicker">Guide section</span><h2>Official schedule routes by electricity company</h2><p>The format varies by provider. Some pages offer an account lookup; others link to documents for different areas. If an official page is slow or unavailable, use the provider's customer service or local office for help.</p><div aria-label="Official provider schedule routes" class="table-wrap" role="region" tabindex="0"><table class="guide-table">
+<thead>
+<tr>
+<th scope="col">Provider</th>
+<th scope="col">Where to start</th>
+<th scope="col">What to have ready</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LESCO</td>
+<td>Try the official <a href="https://www.lesco.gov.pk/ShutdownSchedule">LESCO load shedding and shutdown schedule page</a>. Its indexed page asks for a reference number.</td>
+<td>Your bill and reference number; contact LESCO if the page is unavailable.</td>
+</tr>
+<tr>
+<td>IESCO</td>
+<td>Open <a href="https://iesco.com.pk/load-shedding">IESCO's load-shedding management page</a>. The company publishes a separate <a href="https://iesco.com.pk/maintenance-schedule">maintenance schedule page</a>.</td>
+<td>Your circle and feeder details, plus a way to open a spreadsheet if a relevant file is available.</td>
+</tr>
+<tr>
+<td>K-Electric</td>
+<td>Open the official <a href="https://ke.com.pk/load-shed-schedule/">load-shed and maintenance schedule page</a>. It has separate account-number searches for the two schedule types and a downloadable load-shed schedule.</td>
+<td>Your KE account number for the searches. To read the downloaded schedule, check your feeder name. KE says you can find it on the top section of your bill, in the Power tab of KE Live, or by calling 118.</td>
+</tr>
+<tr>
+<td>Other providers</td>
+<td>Check the official website or contact details shown on your bill.</td>
+<td>Your provider, account or reference number and location. Ask the company to identify your feeder if needed.</td>
+</tr>
+</tbody>
+</table></div><p><strong>LESCO note:</strong> We could not directly access the schedule page when researching this guide, and we did not test a reference-number lookup. If it does not open or return a clear result, contact LESCO through an official channel.</p><p><strong>IESCO note:</strong> The official pages list downloadable files by circle and date. Choose a file only if its period applies to your query. If the available listing is for a future period, an older period or the wrong circle, ask IESCO for the applicable information rather than treating it as today's timetable.</p><p><strong>K-Electric note:</strong> The official page offers a load-shed schedule download as well as account searches. Individual account searches were not tested for this guide. Confirm any uncertain result with KE.</p></section><section class="section" id="read-feeder-schedule"><span class="kicker">Guide section</span><h2>How to read a feeder schedule</h2><p>First make sure the schedule belongs to the company supplying your connection. Then check these details together:</p><ul>
+<li><strong>Feeder or area:</strong> Match the exact feeder name or code where the document uses one. A similar street or neighbourhood name alone may not be enough.</li>
+<li><strong>Circle or grid:</strong> Some providers organise notices by circle, office or grid. Use the grouping given by your company.</li>
+<li><strong>Effective period:</strong> Look for the publication date and the days or dates covered. Do not assume an older or future-dated notice applies today unless its stated period includes today.</li>
+<li><strong>Time window:</strong> Read the listed start and end times carefully, including any date change around midnight.</li>
+<li><strong>Notes or revisions:</strong> Check for qualifications, updates and later notices. Confirm with the provider if two notices conflict.</li>
+</ul><p>The feeder serving a connection can change. If the name on an old bill or document no longer matches what the company tells you, ask for the current feeder details and use the latest applicable notice.</p></section><section class="section" id="types-of-interruption"><span class="kicker">Guide section</span><h2>Load shedding, maintenance or an unexpected fault?</h2><p>Not every power cut is scheduled load shedding. Looking in the right place can save time, but a schedule alone cannot diagnose an outage.</p><div aria-label="Types of power interruptions" class="table-wrap" role="region" tabindex="0"><table class="guide-table">
+<thead>
+<tr>
+<th scope="col">Type of interruption</th>
+<th scope="col">What it means for your check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Load shedding</strong></td>
+<td>A company may publish load-management timings for affected feeders. Check the provider's applicable schedule.</td>
+</tr>
+<tr>
+<td><strong>Planned maintenance or shutdown</strong></td>
+<td>Network work may be listed in a separate maintenance or shutdown notice, with its own dates and affected areas.</td>
+</tr>
+<tr>
+<td><strong>Unexpected fault or other interruption</strong></td>
+<td>Weather, equipment problems or another unplanned event may interrupt supply outside a published schedule. Ask the provider for the cause and updates.</td>
+</tr>
+</tbody>
+</table></div><p>If your power goes off outside a listed load-shedding window, it could be maintenance, a fault or another interruption. Ask your company for an update rather than assuming the cause.</p></section><section class="section" id="schedule-not-available"><span class="kicker">Guide section</span><h2>What if the load shedding schedule is not available?</h2><p>Start by checking the provider name and the reference or account number on your bill. If you have a feeder name, check its spelling and confirm that the notice covers your area and date. For IESCO or another provider using downloadable files, make sure you opened the relevant circle and period.</p><p>Can't open the page or find a matching entry? Contact your company's customer service or local office. Ask which feeder serves your connection and where to find its latest applicable schedule. If you cannot get online, use the official contact details on your bill or visit the relevant office.</p><p><strong>No result does not automatically mean your area is exempt from load shedding.</strong> The lookup might be unavailable, the details might not match, or the information may be published elsewhere. Ask your provider to clarify.</p></section><section class="section" id="unexpected-outage"><span class="kicker">Guide section</span><h2>What to do if the power is out outside the schedule</h2><p>If the power goes off unexpectedly or stays off beyond the listed window, check your provider's maintenance notices and official updates. Then report the interruption through its official complaint channel. Have your location and account or reference number ready, and note when the power went off. Ask for a complaint number and an update, and keep the acknowledgement for follow-up.</p><p>If the matter remains unresolved, follow up with the company using the same complaint number. You can also consult the current instructions on <a href="https://nepra.org.pk/CAD-Database/CMS-CAD/home.php">NEPRA's consumer affairs complaint portal</a> after approaching your provider. The registration page advises contacting the relevant SDO or XEN first and gives separate instructions for complaints more than one year old. A complaint does not itself guarantee an immediate response or restoration time. Our <a href="/blog/electricity-bill-complaint-guide/">electricity bill complaint guide</a> explains how to keep a useful record when contacting the company.</p><p><strong>Safety first:</strong> Stay away from fallen wires and damaged electrical equipment. Do not touch them, open a meter or attempt repairs yourself. Report the hazard through official utility or emergency channels.</p></section><section class="section" id="faqs"><span class="kicker">Frequently asked questions</span><h2>Frequently asked questions</h2><details class="qa-item"><summary>How can I find my feeder name if it is not printed on my bill?</summary><div class="qa-answer"><p>Ask your electricity company's customer service or local office. Give your account or reference number through an official channel and ask which feeder currently supplies your connection. Some providers also show feeder information in their official apps or schedule tools.</p></div></details><details class="qa-item"><summary>Can I check a schedule using my reference or account number?</summary><div class="qa-answer"><p>Some providers offer that option. The LESCO schedule page is indexed as requesting a reference number, while K-Electric's official page offers account-number searches. Availability and results can vary; contact your provider if the page does not work or the result is unclear.</p></div></details><details class="qa-item"><summary>Are maintenance shutdowns and load shedding the same?</summary><div class="qa-answer"><p>No. Load management and planned network maintenance are different reasons for interrupting supply. Providers may publish separate schedules or notices for them, so check both where relevant.</p></div></details><details class="qa-item"><summary>Why does a nearby street have a different outage?</summary><div class="qa-answer"><p>Nearby connections may be supplied by different feeders or affected by different parts of the network. A local fault or maintenance work can also affect one area without affecting another. Ask your provider which feeder serves your connection.</p></div></details><details class="qa-item"><summary>Does an empty result mean my area is exempt?</summary><div class="qa-answer"><p>Not necessarily. A missing or empty result may have several explanations, including an unavailable lookup or a schedule for a different period. Confirm with your electricity company before assuming there is no scheduled outage.</p></div></details><details class="qa-item"><summary>Will the electricity return exactly when the schedule says?</summary><div class="qa-answer"><p>A listed window is useful for planning, but it is not a guarantee. Timings can be revised, and unrelated faults or other interruptions can occur. Contact the provider for updates if supply remains off.</p></div></details></section><section class="section" id="related-guides"><span class="kicker">Guide section</span><h2>Related guides</h2><ul>
+<li><a href="/blog/where-is-reference-number-on-electricity-bill/">Where is the reference number on an electricity bill?</a></li>
+<li><a href="/blog/reference-number-vs-customer-id/">Reference number vs customer ID</a></li>
+<li><a href="/blog/electricity-bill-complaint-guide/">Electricity bill complaint guide</a></li>
+<li><a href="/blog/electricity-bill-check-online-pakistan/">How to check an electricity bill online in Pakistan</a></li>
+</ul></section><section class="section" id="final-step"><span class="kicker">Guide section</span><h2>Final step</h2><p>Keep your bill and feeder details handy, then check your own provider's official notice for the relevant date. If the schedule or your feeder is unclear, ask the company before relying on a timetable shared by someone else.</p></section><section class="section" id="sources"><span class="kicker">Sources</span><h2>Sources</h2><ul>
+<li><a href="https://www.lesco.gov.pk/ShutdownSchedule">LESCO: Load shedding and shutdown schedule</a> — indexed official page; direct access was unavailable during research.</li>
+<li><a href="https://iesco.com.pk/load-shedding">IESCO: Load-shedding management</a> and <a href="https://iesco.com.pk/maintenance-schedule">maintenance schedule</a>.</li>
+<li><a href="https://ke.com.pk/load-shed-schedule/">K-Electric: Load-shed and maintenance schedule</a>.</li>
+<li><a href="https://nepra.org.pk/Legislation/3-Reg/3.39%20NEPRA%20Performance%20Standards%20(Distribution)%20Regulations,%202026/SRO%201430(I)-2026%20Dated%2025-08-2026.pdf">NEPRA Performance Standards (Distribution) Regulations, 2026</a>.</li>
+<li><a href="https://nepra.org.pk/CAD-Database/CMS-CAD/home.php">NEPRA Consumer Affairs complaint portal</a>.</li>
+</ul></section><div class="author-card"><span aria-hidden="true" class="author-av">BB</span><div><p class="author-nm">BijleeBill.pk Team</p><p class="author-rl">Independent bill &amp; tariff research desk</p><p>BijleeBill.pk publishes practical electricity guidance using official NEPRA and utility sources. We explain how to check notices and where to ask for updates.</p><a class="author-more" href="../../about/">More about us →</a></div></div><section class="article-footer"><h2>Check your feeder and the latest notice</h2><p>Keep your bill handy, confirm your feeder with your provider, and check the dates before relying on a schedule.</p><div class="hero-actions"><a class="btn btn-primary" href="/blog/">Explore more bill guides</a><button class="copy-link" type="button">Copy article link</button></div></section></article></div></main>
+<style>
+
+.bb-foot{--f-bg:#ffffff;--f-border:#d9e8e1;--f-text:#071a14;--f-muted:#5b6f68;
+--f-faint:#5b6f68;--f-accent:#047857;--f-accent2:#047857;--f-logoink:#ffffff;
+--f-grad:linear-gradient(135deg,#34d399,#047857);
+--f-logoshadow:0 6px 22px rgba(4,120,87,.28)}
+
+.bb-foot{--f-max:1180px;--f-sans:"Plus Jakarta Sans","PJS Fallback",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--f-disp:"Outfit","Outfit Fallback","Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;font-family:var(--f-sans);box-sizing:border-box}
+.bb-foot *,.bb-foot *::before,.bb-foot *::after{box-sizing:border-box;margin:0;padding:0}
+.bb-foot{border-top:1px solid var(--f-border);padding:64px 0 30px;background:var(--f-bg);color:var(--f-text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.bb-foot a{color:inherit;text-decoration:none}
+.foot-inner{max-width:var(--f-max);margin:0 auto;padding:0 24px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+.foot-brand-link{display:inline-flex;align-items:center;gap:11px;font-family:var(--f-disp);font-weight:700;font-size:20px;letter-spacing:-.01em}
+.fb-logo{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--f-grad);box-shadow:var(--f-logoshadow);color:var(--f-logoink)}
+.fb-logo svg{width:20px;height:20px}
+.foot-pk{color:var(--f-accent2)}
+.foot-brand>p{color:var(--f-muted);font-size:14.5px;margin:16px 0 6px;max-width:300px}
+.foot-brand .foot-urdu{font-size:15px;color:var(--f-text);direction:rtl;text-align:left}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:40px;height:40px;border-radius:11px;border:1px solid var(--f-border);display:grid;place-items:center;color:var(--f-muted);transition:.25s}
+.socials a:hover{color:var(--f-accent);border-color:var(--f-accent);transform:translateY(-3px)}
+.socials svg{width:18px;height:18px}
+.foot-col h3{font-family:var(--f-disp);font-weight:700;font-size:14px;letter-spacing:.06em;margin-bottom:18px;color:var(--f-text)}
+.foot-col a{display:block;color:var(--f-muted);font-size:14px;padding:6px 0;transition:.2s}
+.foot-col a:hover{color:var(--f-accent);transform:translateX(3px)}
+.disclaimer{font-size:12px;color:var(--f-faint);margin:0 0 26px;text-align:justify;text-align-last:left;hyphens:auto;-webkit-hyphens:auto;line-height:1.7}
+.disclaimer strong{color:var(--f-muted);letter-spacing:.03em}
+.foot-bottom{border-top:1px solid var(--f-border);padding-top:26px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.foot-bottom p{color:var(--f-faint);font-size:13px}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.foot-grid{grid-template-columns:1fr;gap:30px}
+.foot-bottom{flex-direction:column;text-align:center}
+.bb-foot{padding:44px 0 26px}}
+
+</style>
+<footer class="bb-foot">
+<div class="foot-inner">
+<div class="foot-grid">
+<div class="foot-brand">
+<a class="foot-brand-link" href="/#top"><span aria-hidden="true" class="fb-logo"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z"></path></svg></span>BijleeBill<span class="foot-pk">.pk</span></a>
+<p>Pakistan's smartest way to check electricity bills — free, instant and private.</p>
+<p class="foot-urdu">بجلی کا بل — اب سیکنڈوں میں <span aria-hidden="true">⚡</span></p>
+<div class="socials">
+<a aria-label="Facebook" href="/contact/"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M14 9h3V6h-3c-2 0-3 1-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"></path></svg></a>
+<a aria-label="X" href="/contact/"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5z"></path></svg></a>
+<a aria-label="Instagram" href="/contact/"><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle></svg></a>
+<a aria-label="WhatsApp" href="/contact/"><svg fill="currentColor" viewbox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.1-1.3A10 10 0 1 0 12 2zm5.3 14c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.7-1.2-4.5-4-4.6-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.1.1.3 0 .5l-.3.5-.3.3c-.1.1-.2.3-.1.5.1.2.6 1 1.3 1.6.9.8 1.6 1 1.8 1.1.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.8.9c.2.1.4.2.4.3.1.1.1.6-.1 1.2z"></path></svg></a>
+</div>
+</div>
+<div class="foot-col">
+<h3>QUICK LINKS</h3>
+<a href="/#checker-card">Check Bill</a>
+<a href="/#discos">Supported DISCOs</a>
+<a href="/#how">How it Works</a>
+<a href="/#calculator">Bill Calculator</a>
+<a href="/blog/">Blog</a>
+<a href="/#faq">FAQ</a>
+</div>
+<div class="foot-col">
+<h3>POPULAR DISCOS</h3>
+<a href="/disco/lesco/">LESCO (Lahore)</a>
+<a href="/disco/k-electric/">K-Electric (Karachi)</a>
+<a href="/disco/mepco/">MEPCO (Multan)</a>
+<a href="/disco/fesco/">FESCO (Faisalabad)</a>
+<a href="/disco/iesco/">IESCO (Islamabad)</a>
+</div>
+<div class="foot-col">
+<h3>SUPPORT</h3>
+<a href="/contact/">Help Center</a>
+<a href="/blog/where-is-reference-number-on-electricity-bill/">Find Reference Number</a>
+<a href="/privacy-policy/">Privacy Policy</a>
+<a href="/terms/">Terms of Service</a>
+<a href="/about/">About Us</a>
+<a href="/contact/">Contact</a>
+<a href="/contact/">support [at] bijleebill.pk</a>
+</div>
+</div>
+<p class="disclaimer"><strong>Disclaimer:</strong> BijleeBill.pk is an independent bill-checking convenience service and is not affiliated with, endorsed by, or connected to PITC, any DISCO, K-Electric, or the Government of Pakistan. All company names, logos and trademarks shown on this site are the property of their respective owners and are used for identification purposes only. Your reference number is sent directly to the official public portals (bill.pitc.com.pk / ke.com.pk); saved numbers stay in your browser only. For payments, always use official DISCO / bank channels.</p>
+<div class="foot-bottom">
+<p>© 2026 BijleeBill.pk — All rights reserved.</p>
+<p>Made with <span aria-hidden="true">⚡</span> in Pakistan</p>
+</div>
+</div>
+</footer>
+<script defer="" src="../article-20261015.js"></script>
+<a aria-label="Check Bill" class="bb-sticky-check" href="/disco/lesco/">⚡ Check Bill</a>
+<style>
+.bb-totop{position:fixed;right:24px;bottom:24px;z-index:70;width:46px;height:46px;
+display:grid;place-items:center;border-radius:14px;cursor:pointer;padding:0;
+background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+border:1px solid #d9e8e1;color:#047857;box-shadow:0 10px 24px rgba(4,80,59,.14);
+opacity:0;transform:translateY(14px);pointer-events:none;
+transition:opacity .3s ease,transform .3s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease,color .25s ease}
+.bb-totop.show{opacity:1;transform:none;pointer-events:auto}
+.bb-totop:hover{border-color:#047857;background:#047857;color:#fff;
+box-shadow:0 14px 30px rgba(4,120,87,.32);transform:translateY(-2px)}
+.bb-totop:focus-visible{outline:3px solid #047857;outline-offset:2px}
+.bb-totop:active{transform:translateY(0)}
+.bb-totop svg{width:20px;height:20px;display:block}
+@keyframes bb-totop-bounce{0%,100%{translate:0 0}20%{translate:0 -8px}38%{translate:0 -1px}52%{translate:0 -4px}64%{translate:0 0}}
+@keyframes bb-totop-arrow{0%,100%{transform:translateY(0)}20%{transform:translateY(-3px)}38%{transform:translateY(0)}52%{transform:translateY(-1.5px)}64%{transform:translateY(0)}}
+.bb-totop.show{animation:bb-totop-bounce 2.6s ease-in-out infinite}
+.bb-totop.show svg{animation:bb-totop-arrow 2.6s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){
+  .bb-totop.show,.bb-totop.show svg{animation:none}
+}
+@media(max-width:767px){.bb-totop{display:grid;bottom:calc(72px + env(safe-area-inset-bottom));right:14px;width:44px;height:44px;border-radius:12px}}
+@media(prefers-reduced-motion:reduce){.bb-totop{transition:opacity .2s ease}}
+</style>
+<button aria-label="Back to top" class="bb-totop" title="Back to top" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+<script defer="" src="/assets/bb-totop.js"></script>
+<script defer="" src="/assets/bb-header-v2.js"></script>
+</body>
+</html>
